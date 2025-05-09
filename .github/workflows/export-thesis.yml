@@ -1,0 +1,28 @@
+name: Export thesis to PDF
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  compile-and-push-thesis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: "Setup Typst"
+        uses: typst-community/setup-typst@v4
+
+      - name: "Compile Thesis"
+        run: typst compile thesis.typ Ferazzani_Orlando.pdf
+
+      - name: "Push to master"
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
+          git checkout master
+          git pull origin master
+          git add Ferazzani_Orlando.pdf
+          git commit -m "Update thesis PDF [skip ci]"
+          git push origin master
