@@ -53,5 +53,7 @@ Da qui la mia scelta di eseguire un tirocinio interno proprio con la #myProf, sp
 
 == Strumenti e processi
 
+//add new things here
+
 Durante il corso del tirocinio, mi sono avvalso di diversi strumenti che ho imparato ad utilizzare nel corso della mia carriera universitaria, e che mi hanno aiutato a portare avanti il mio progetto, come #glossary("Git") e #glossary("GitHub"), utilissimi per tenere traccia di ogni modifica effettuata al codice sorgente dell'applicazione, nonché per la condivisione di tale codice con la mia Relatrice. Inoltre, come già anticipato, ho scelto di utilizzare dei framework di #glossary("ReactJS") per lo sviluppo del mio progetto. Tutte le tecnologie saranno discusse nel dettaglio #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))].
 
