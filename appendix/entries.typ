@@ -5,15 +5,35 @@
 #let entry-list = (
   (
     key: "WebApp",
-    description: "Applicazione Web",
+    description: "abbr. Applicazione Web",
   ),
   (
-    key: "Drag and Drop",
-    description: "Lett. trascina e rilascia. Tecnica utilizzata in alcune applicazioni web dove l'utente deve prendere con il mouse (o il dito se da mobile) un componente del sito stesso e spostartlo in un'altra area predefinita.",
+    key: "Lettori e Scrittori",
+    description: "Lettori e scrittori. Problema di sincronizzazione in cui più processi (lettori) possono leggere le informazioni condivise, ma solo un processo (scrittore) può modificarle.",
   ),
   (
     key: "Way of Working",
     description: "Modalità di lavoro. In questo caso, si riferisce alla modalità di lavoro adottata da un team di sviluppo software.",
+  ),
+  (
+    key: "Cybersecurity",
+    description: "ing. Sicurezza informatica. Ramo dell'informatica che si occupa della protezione dei sistemi informatici e delle reti da attacchi, danni o accessi non autorizzati.",
+  ),
+  (
+    key: "Web Development",
+    description: "ing. Sviluppo web. Processo di creazione e manutenzione di siti web e applicazioni web.",
+  ),
+  (
+    key: "Git",
+    description: "Sistema di controllo versione distribuito. Permette di tenere traccia delle modifiche apportate a file e cartelle nel tempo.",
+  ),
+  (
+    key: "GitHub",
+    description: "Piattaforma di hosting per progetti software che utilizza Git come sistema di controllo versione. Permette la collaborazione tra sviluppatori e la gestione del codice sorgente.",
+  ),
+  (
+    key: "ReactJS",
+    description: "Libreria JavaScript per la creazione di interfacce utente. Permette di costruire applicazioni web complesse e reattive in modo efficiente.",
   ),
 )
 

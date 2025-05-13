@@ -4,14 +4,6 @@
 #set par(first-line-indent: 0pt)
 #set page(numbering: "i")
 
-#align(
-  right,
-  [
-    Non c'è limite al peggio, negli algoritmi come nella vita.
-    #v(6pt)
-    #sym.dash#sym.dash#sym.dash Paolo Baldan
-  ],
-)
 
 #v(10em)
 

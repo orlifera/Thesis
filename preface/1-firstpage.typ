@@ -41,7 +41,7 @@
     #v(10pt)
     #align(center, text(15pt, weight: "light", style: "italic", myDegree))
     #v(10pt)
-    #align(center, text(8pt, weight: "light", style: "italic", "20 Settembre 2024"))
+    #align(center, text(8pt, weight: "light", style: "italic", "25 Luglio 2025"))
     #v(40pt)
 
     // Relatore e laureando

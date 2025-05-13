@@ -12,7 +12,7 @@
   // LaTeX look (secondo la doc di Typst)
   set page(
     margin: 1.55in,
-    numbering: myNumbering,
+    numbering: "1 of 1",
     number-align: top + right,
   )
   // set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
@@ -22,7 +22,6 @@
   show raw: set text(font: "Avenir", size: 10pt, lang: myLang)
   show par: set par(spacing: 1.5em)
   show heading: set block(above: 1.5em, below: 1.2em)
-  show link: set text(fill: blue.darken(60%))
   show heading.where(level: 4): it => [
     #block(it.body)
   ]

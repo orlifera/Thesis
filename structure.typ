@@ -3,6 +3,7 @@
 #include "./appendix/entries.typ"
 #include "./preface/1-firstpage.typ"
 #include "./preface/2-copyright.typ"
+#include "./preface/cit.typ"
 #include "./preface/3-summary.typ"
 #include "./preface/4-acknowledgements.typ"
 #include "./preface/5-table-of-contents.typ"
