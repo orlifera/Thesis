@@ -19,7 +19,7 @@ jobs:
 
       - name: "Push to master"
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.ORLI_TOKEN }}
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'github-actions@github.com'
