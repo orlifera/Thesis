@@ -40,6 +40,10 @@ jobs:
         run: |
           typst compile thesis.typ Orlando_Ferazzani.pdf
 
+      - name: copy compiled PDF to build repo
+        run: |
+          cp Orlando_Ferazzani.pdf "${RUNNER_TEMP}/master/"
+
       - name: push to builds repo
         run: |
           pushd "${RUNNER_TEMP}/master"
