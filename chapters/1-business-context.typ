@@ -22,11 +22,16 @@
   text(fill: rgb("#a99c84"), t)
 }
 
+#let dummy(word) = {
+  let t = word + sub("G")
+  text(fill: rgb("#a99c84"), t)
+}
+
 #pagebreak(to: "odd")
 
 
 
-= Il contesto
+= Introduzione
 <business-context>
 
 #text(
@@ -53,7 +58,48 @@ Da qui la mia scelta di eseguire un tirocinio interno proprio con la #myProf, sp
 
 == Strumenti e processi
 
-//add new things here
-
 Durante il corso del tirocinio, mi sono avvalso di diversi strumenti che ho imparato ad utilizzare nel corso della mia carriera universitaria, e che mi hanno aiutato a portare avanti il mio progetto, come #glossary("Git") e #glossary("GitHub"), utilissimi per tenere traccia di ogni modifica effettuata al codice sorgente dell'applicazione, nonché per la condivisione di tale codice con la mia Relatrice. Inoltre, come già anticipato, ho scelto di utilizzare dei framework di #glossary("ReactJS") per lo sviluppo del mio progetto. Tutte le tecnologie saranno discusse nel dettaglio #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))].
 
+=== Suddivisione del lavoro
+
+Dovendo presentare un #glossary("Piano di Lavoro") per inizire il mio tirocino, e volendo rispettare gli insegnamenti appresi dal corso di Ingegneria del Software, ho da subito deciso di impostare il mio Way of Working.
+
+Ho quindi dapprima definito tutti gli obiettivi da raggiungere durante il percorso, trovandone 19. A questo punto, ho suddiviso il lavoro da svolgere nelle 8 settimane, potendo quindi definire degli "#glossary("sprint")". A fine di ogni sprint, controllo di aver completato tutto ciò che mi ero prefissato nel #glossary("backlog") di lavoro e, se ci fosse qualcosa che non ho completato, lo sposto nel backlog del prossimo sprint.
+
+Per il tracciamento, come menzionato sopra, in una #glossary("Kanban") board, divisa in 3 colonne:
++ ToDo: attività da completare
++ In Progress: attività in corso
++ Done: attività completate
+
+#figure(
+  image("/images/kanban.png", width: 100%),
+  caption: "vista della Kanban alla seconda settimana",
+)
+
+#pagebreak()
+Inoltre, per visualizzare i tempi di svolgimento previsti ed effettivi, ho deciso di utilizzare un diagramma di Gantt.
+#figure(
+  image("/images/gantt.png", width: 100%),
+  caption: "vista della Kanban alla seconda settimana",
+)
+
+
+Tutto questo è conforme al metodo di lavoro #glossary("Scrum"), che prevede una suddivisione del lavoro in sprint e un monitoraggio costante dei progressi. Lo Scrum fa parte della metodologia Agile#sub[@manifesto_agile], creata per migliorare lo sviluppo di prodotti software rallentati dalle tediose fasi di analisi e documentazione.
+
+== Struttura del Documento
+
+- *Cosa*: Il #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))] fornisce una panoramica di tutto il progetto, dal suo scopo, a i prodotti attesi, descrivendo nel dettaglio il concetto di webapp interattiva e le tecnologie utilizzate e le motivazioni dietro queste.
+
+- *Come*: Il #link(<stage-description>)[#text("terzo capitolo", fill: blue.darken(30%))] espone come le scelte descritte nel capitolo precedente sono state implementate. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di accessibilità.
+
+- *Conclusioni*: Il #link(<conclusions>)[#text("quarto capitolo", fill: blue.darken(30%))] fornisce una panoramica dei risultati ottenuti, sia a livello di codice sorgente che di accessibilità. Inoltre, viene fornita una panoramica dei test effettuati e dei risultati ottenuti.
+
+- Nel #link(<cap:glossary>)[#text("Glossario", fill: blue.darken(30%))] sono riportati i termini tecnici e le abbreviazioni utilizzate nel corso del documento.
+
+
+
+Oltre alla struttura qui sopra descritta, si adottano anche i seguenti accorgimenti tipografici:
+
+- le abbreviazioni, termini tecnici (o comunque di uso non comune), o in lingua straniera in prima occorrenza nel documento sono definiti nel glossario consultabile alla fine del documento. Ogni termine nel glossario è evidenziato come segue: #dummy("Parola").
+
+- Altri termini che richiedono un'attenzione particolare, ma che non hanno bisogno di essere definiti, saranno evidenziati in corsivo: _Parola_

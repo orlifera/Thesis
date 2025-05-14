@@ -3,39 +3,3 @@ manifesto_agile:
   title: Manifesto tetet Agile Software Development
   author: ["Robert C. Martin", "Kent Beck", "Martin Fowler", "altri"]
   url: http://agilemanifesto.org/
-
-infineon_tc375:
-  type: web
-  title: Pagina ufficiale del kit di sviluppo Infineon TC375
-  author: ["Infineon Technologies"]
-  url: https://www.infineon.com/cms/en/product/evaluation-boards/kit_a2g_tc375_lite/
-
-iso26262:
-  type: web
-  title: "ISO 26262: Road vehicles - Functional safety"
-  author: ["International Organization for Standardization (ISO)"]
-  url: https://www.iso.org/standard/68383.html
-
-iecch:
-  type: web
-  title: "IEC 61508: Sicurezza funzionale dei sistemi elettrici/elettronici/programmabili per la sicurezza"
-  author: ["International Electrotechnical Commission (IEC)"]
-  url: https://www.iec.ch/functional-safety
-
-tc37x_user_manual:
-  type: web
-  title: "Manuale utente specifico per la famiglia di microcontrollori Infineon Aurix TC37x"
-  author: ["Infineon Technologies"]
-  url: https://www.infineon.com/dgdl/Infineon-AURIX_TC37x-UserManual-v02_00-EN.pdf?fileId=5546d4627506bb32017530759f185ed8
-
-hightec_rdp:
-  type: web
-  title: "HighTec Rust Development Platform"
-  author: ["HighTec EDV-Systeme GmbH"]
-  url: https://hightec-rt.com/products/rust-development-platform
-
-polysync_misra_rust:
-  type: web
-  title: "MISRA Rust"
-  author: ["Shea Newton (PolySync Technologies)"]
-  url: "https://github.com/PolySync/misra-rust/tree/master?tab=readme-ov-file"

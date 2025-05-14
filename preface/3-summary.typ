@@ -29,13 +29,7 @@ Tuttavia, queste applicazioni sono spesso molto tediose da utilizzare dato il br
 Il tirocionio effettuato mira proprio a risolvere questa problematica, sviluppando una _WebApp_ interattiva che permetta di avvicinare i ragazzi al mondo della programmazione in modo divertente e stimolante.
 
 
-In questo documento, espongo il lavoro che ho svolto con la seguente suddivisione:
 
-- Nel #link(<business-context>)[#text("primo capitolo", fill: blue.darken(30%))] descrivo il contesto all'interno del quale ho svolto il mio tirocinio, fornendo una panoramica degli strumenti e dei processi adottati, nonché del #glossary("Way of Working").
-- Nel #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))] espongo lo scopo dello stage, i prodotti attesi e gli obiettivi personali.
-- Nel #link(<stage-description>)[#text("terzo capitolo", fill: blue.darken(30%))] descrivo nel dettaglio le attività svolte e metodi di approccio a
-problemi. Alla fine presento brevemente il prodotto finale.
-- Nel #link(<cap:glossary>)[#text("Glossario", fill: blue.darken(30%))] sono riportati i termini tecnici e le abbreviazioni utilizzate nel corso del documento.
 
 
 // Attualmente, il _software_ dei sistemi di controllo è ancora prevalentemente sviluppato in
