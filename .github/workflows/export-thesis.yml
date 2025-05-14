@@ -16,27 +16,35 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: checkout the builds repo
         uses: actions/checkout@v4
         with:
           ref: master
           path: master
           token: ${{secrets.ORLI_TOKEN}}
+
       - name: move master to runner.temp
         run: |
           mv master "${RUNNER_TEMP}"
-      - name: restore timestamps
-        uses: chetan/git-restore-mtime-action@v2
+
+      - name: install typst
+        run: |
+          curl -L https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz -o typst.tar.xz
+          tar -xf typst.tar.xz
+          sudo mv typst /usr/local/bin
+
       - name: typst compile
         run: |
-          typst compile thesis.typ Orlando_Ferazzani.pdf;
+          typst compile thesis.typ Orlando_Ferazzani.pdf
+
       - name: push to builds repo
         run: |
           pushd "${RUNNER_TEMP}/master"
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "$(date)" || continue
+          git commit -m "$(date)" || true
           git push
         env:
           TZ: Europe/Rome
