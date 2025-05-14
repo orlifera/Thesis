@@ -34,12 +34,7 @@
 = Introduzione
 <business-context>
 
-#text(
-  style: "italic",
-  [
-    In questo capitolo spiegherò le motivazioni che mi hanno spinto a scegliere questo tirocinio, sia a livello personale che professionale. Inoltre, fornirò una panoramica del contesto in cui si inserisce il mio progetto, oltre che degli strumenti e dei processi adottati.
-  ],
-)
+
 
 #v(1em)
 

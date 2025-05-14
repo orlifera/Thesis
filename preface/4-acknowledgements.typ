@@ -11,28 +11,6 @@
 
 #v(3em)
 
-#text(
-  style: "italic",
-  "Innanzitutto, vorrei esprimere la mia più profonda gratitudine al "
-    + profTitle
-    + myProf
-    + ", relatore della mia tesi, per il supporto fornitomi durante la stesura e per la pazienza di rispondere ad ogni mio pensiero inquieto.",
-)
-
-#linebreak()
-
-#text(
-  style: "italic",
-  "Desidero ringraziare con affetto i miei genitori, per il sostegno durante tutti gli anni di studio.",
-)
-#text(style: "italic", "Mamma, alla fine, tutti i capelli bianchi che ti ho fatto venire, hanno dato i loro frutti.")
-
-#linebreak()
-
-#text(
-  style: "italic",
-  "Un grazie, dal profondo del cuore, a Sofia, per i momenti condivisi assieme. Con te affianco, posso raggiungere qualsiasi vetta.",
-)
 
 #v(2em)
 
