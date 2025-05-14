@@ -1,37 +1,42 @@
-name: Export thesis to PDF
+name: Compile Typst documents
 on:
   push:
     branches:
       - develop
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
-  compile-and-push-thesis:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: "Setup Typst"
-        uses: typst-community/setup-typst@v4
-
-      - name: "Compile Thesis"
-        run: typst compile thesis.typ Ferazzani_Orlando.pdf
-
-      - name: "Push to master"
-        env:
-          TOKEN: ${{ secrets.ORLI_TOKEN }}
+      - name: checkout the builds repo
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master
+          token: ${{secrets.ORLI_TOKEN}}
+      - name: move master to runner.temp
         run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'github-actions@github.com'
-
-          # Set up authenticated remote explicitly
-          git remote remove origin
-          git remote add origin https://x-access-token:${TOKEN}@github.com/orlifera/Thesis.git
-
-          git checkout master
-          git pull origin master
-          git add Ferazzani_Orlando.pdf
-          git commit -m "Update thesis PDF [skip ci]" || echo "No changes"
-          git push origin master
-
-
+          mv master "${RUNNER_TEMP}"
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+      - name: typst compile
+        run: |
+          typst compile thesis.typ Orlando_Ferazzani.pdf;
+      - name: push to builds repo
+        run: |
+          pushd "${RUNNER_TEMP}/master"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "$(date)" || continue
+          git push
+        env:
+          TZ: Europe/Rome
