@@ -19,12 +19,12 @@
 
 #let glossary(word) = {
   let t = gls(word) + sub("G")
-  text(fill: rgb("#a99c84"), t)
+  text(fill: rgb("#3354c1"), t)
 }
 
 #let dummy(word) = {
   let t = word + sub("G")
-  text(fill: rgb("#a99c84"), t)
+  text(fill: rgb("#3354c1"), t)
 }
 
 #pagebreak(to: "odd")
@@ -40,16 +40,25 @@
 
 == Motivazioni e Contesto
 
-Sin dal primo semestre del terzo anno, i miei interessi nel modno dell'informatica sono migrati, seppur non interamente, dalla #glossary("Cybersecurity") al #glossary("Web Development").
+Il corso di laurea triennale in _Informatica_ che offre l'Ateneo dell'_Università Di Padova_ è a numero chiuso, con un massimo di 222 postim cifra che nel corso degli anni è aumentata di paripasso con il numero di iscritti. Tuttavia, le scuole di provenienza delle matricole mostrano una grande disparità, con il numero degli studenti provenienti da istituti ad indirizzo informatico (come istituti tenici o liceo delle sicenze applicate) che supera di gran lunga il numero di studenti provenienti da licei tradizionali. In particolare, parliamo di circa il 75% di studenti che proviene da istituti tecnici, e il circa il 25% proveniente da altri istituti.
 
-Questo interesse deriva da tre motivi principali:
-- il primo si può definire visivo: mi piace vedere il risultato del mio lavoro, e il Web Development è un ottimo modo per farlo. Mi sprona anche a migliorarmi di progetto in progetto;
+Questa disparità è data sicuramente dalla "credenza" che l'informatica sia solo programmazione e che quindi uno studente proveniente da un Liceo Scientifico non abbia le competenze necessarie per questo affrontare questo percorso.
 
-- il secondo invece è proprio il corso di _Tecnologie Web_ offerto dal mio corso di laurea. La #myProf ha saputo trasmettere la sua passione per il Web Developmente l'accessibilità rendendo il corso interessante e stimolante. Questo mi ha portato a voler approfondire le mie conoscenze in questo campo, e a cercare un tirocinio che fosse in linea con i miei interessi.
+Tuttavia, di contro a questa "credenza", non mancano le competenze, ma solamente le conoscenze, che è proprio il vuoto che questo corso va a colmare. Se magari uno studente proveniente da un istituto tecnico ha già delle competenze di programmazione, uno studente proveniente da un liceo scientifico ha sicuramente delle competenze matematiche e logiche che sono fondamentali per affrontare questo percorso.
 
-- L'ultimo, ma non per importanza, è un motivo personale: un sito web sviluppato con un design accattivante e funzionale è la miglior prima impressione che un'azienda può fare sui propri clienti, oltre che alla qualità di qualsiasi servizio questa offra. Avendo fatto il passo importante di portare avanti una mia azienda, con un sito web in parte svilupato da me, mi impegno costantemente a mantenerlo aggiornato, sia a livello di design che a livello di funzionalità.
+Lo scopo di questo tirocinio, quindi, è proprio quello di dimostrare a tutti gli studenti che hanno un interesse in informatica, che non importa quale sia il loro _background_ scolastico per affrontare questo percorso.
 
-Da qui la mia scelta di eseguire un tirocinio interno proprio con la #myProf, spronandomi ancora di più a migliorare le mie conoscenze attraverso l'utilizzo dei principi di accessibilità e usabilità, che sono stati il tema principale del mio tirocinio, nonché dei framework più recenti in modo tale che il mio progetto fosse più stimolante e moderno possibile.
+Altro obiettivo molto importante, è quello di aumentare il numero di iscritti donna, dimostrando, grazie anche a vari testimonial (#link("https://womenincs.math.unipd.it")[#underline(text("WomenInCS", fill: blue.darken(30%)))], dimostrando alle varie studentesse, che la storia dell'informatica è stata fatta in non piccola parte da donne e scenziate.
+
+L'informatica non è solo programmazione, ma è anche progettazione e design. Infatti, il mio progetto si basa sulla creazione di un'applicazione web interattiva, che richiede competenze di progettazione e design oltre a quelle di programmazione.
+
+Personalmente, essendo uno di quei ragazzi timorosi di iniziare il percorso, arrivando da un Liceo Scientifico, mi sono sentito moralmente in dovere di aiutare tutti coloro che si trovano nella posizione in cui io stesso mi sono trovato, anche per questo quindi ho deciso di fare questo tirocinio con la #myProf.
+
+
+// - il secondo invece è proprio il corso di _Tecnologie Web_ offerto dal mio corso di laurea. La #myProf ha saputo trasmettere la sua passione per il Web Developmente l'accessibilità rendendo il corso interessante e stimolante. Questo mi ha portato a voler approfondire le mie conoscenze in questo campo, e a cercare un tirocinio che fosse in linea con i miei interessi.
+
+// - L'ultimo, ma non per importanza, è un motivo personale: un sito web sviluppato con un design accattivante e funzionale è la miglior prima impressione che un'azienda può fare sui propri clienti, oltre che alla qualità di qualsiasi servizio questa offra. Avendo fatto il passo importante di portare avanti una mia azienda, con un sito web in parte svilupato da me, mi impegno costantemente a mantenerlo aggiornato, sia a livello di design che a livello di funzionalità.
+
 
 == Strumenti e processi
 
@@ -71,11 +80,10 @@ Per il tracciamento, come menzionato sopra, in una #glossary("Kanban") board, di
   caption: "vista della Kanban alla seconda settimana",
 )
 
-#pagebreak()
 Inoltre, per visualizzare i tempi di svolgimento previsti ed effettivi, ho deciso di utilizzare un diagramma di Gantt.
 #figure(
   image("/images/gantt.png", width: 100%),
-  caption: "vista della Kanban alla seconda settimana",
+  caption: "vista diagramma di Gantt alla seconda settimana",
 )
 
 

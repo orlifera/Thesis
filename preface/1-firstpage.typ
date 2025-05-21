@@ -52,7 +52,7 @@
       block([
         #align(left, text(12pt, weight: 400, style: "italic", supervisor))
         #v(5pt)
-        #align(left, text(11pt, profTitle + myProf))
+        #align(left, text(11pt, myProf))
       ]),
       block([
         #align(right, text(12pt, weight: 400, style: "italic", undergraduate))
