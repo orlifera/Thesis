@@ -70,21 +70,21 @@ Dovendo presentare un #glossary("Piano di Lavoro") per inizire il mio tirocino, 
 
 Ho quindi dapprima definito tutti gli obiettivi da raggiungere durante il percorso, trovandone 19. A questo punto, ho suddiviso il lavoro da svolgere nelle 8 settimane, potendo quindi definire degli "#glossary("sprint")". A fine di ogni sprint, controllo di aver completato tutto ciò che mi ero prefissato nel #glossary("backlog") di lavoro e, se ci fosse qualcosa che non ho completato, lo sposto nel backlog del prossimo sprint.
 
-Per il tracciamento, come menzionato sopra, in una #glossary("Kanban") board#ref(<KanBoard>, form: "normal", supplement: none), divisa in 3 colonne:
+Per il tracciamento delle task da completare, ho utilizzato una #glossary("Kanban") board#ref(<KanBoard>, form: "normal", supplement: none), divisa in 3 colonne:
 + ToDo: attività da completare
 + In Progress: attività in corso
 + Done: attività completate
 
 #figure(
-  image("/images/kanban.png", width: 100%),
+  image("/images/kanban.png", width: 80%),
   caption: "vista della Kanban alla seconda settimana",
 )<KanBoard>
 
-Inoltre, per visualizzare i tempi di svolgimento previsti ed effettivi, ho deciso di utilizzare un diagramma di Gantt.
+Invece, per visualizzare i tempi di svolgimento previsti ed effettivi di tali task, ho deciso di utilizzare un diagramma di Gantt #ref(<gantt>, form: "normal", supplement: none).
 #figure(
   image("/images/gantt.png", width: 100%),
   caption: "vista diagramma di Gantt alla seconda settimana",
-)
+)<gantt>
 
 
 Tutto questo è conforme al metodo di lavoro #glossary("Scrum"), che prevede una suddivisione del lavoro in sprint e un monitoraggio costante dei progressi. Lo Scrum fa parte della metodologia Agile#sub[@manifesto_agile], creata per migliorare lo sviluppo di prodotti software rallentati dalle tediose fasi di analisi e documentazione.

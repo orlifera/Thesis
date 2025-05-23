@@ -32,10 +32,6 @@
     description: "Piattaforma di hosting per progetti software che utilizza Git come sistema di controllo versione. Permette la collaborazione tra sviluppatori e la gestione del codice sorgente.",
   ),
   (
-    key: "ReactJS",
-    description: "Libreria JavaScript per la creazione di interfacce utente. Permette di costruire applicazioni web complesse e reattive in modo efficiente.",
-  ),
-  (
     key: "Piano di Lavoro",
     description: "Piano di lavoro. Documento che descrive le attività e gli obiettivi di un tirocinio o di un progetto.",
   ),
@@ -54,6 +50,30 @@
   (
     key: "Scrum",
     description: "Framework Agile per la gestione dei progetti. Si basa su iterazioni brevi (sprint) e su riunioni regolari per monitorare i progressi.",
+  ),
+  (
+    key: "ReactJS",
+    description: "Libreria JavaScript per la creazione di interfacce utente. Permette di costruire applicazioni web complesse e reattive in modo efficiente.",
+  ),
+  (
+    key: "NextJS",
+    description: "Framework React per lo sviluppo di applicazioni web. Permette il rendering lato server e la generazione statica delle pagine.",
+  ),
+  (
+    key: "TailwindCSS",
+    description: "Framework CSS per la creazione di interfacce utente reattive e personalizzabili. Utilizza classi utility per semplificare lo sviluppo front-end.",
+  ),
+  (
+    key: "API",
+    description: "Interfaccia di programmazione delle applicazioni. Permette la comunicazione tra diverse applicazioni o servizi.",
+  ),
+  (
+    key: "server-side components",
+    description: "Componenti lato server. Permettono di eseguire il rendering delle pagine sul server prima di inviarle al client, migliorando le prestazioni e l'ottimizzazione SEO.",
+  ),
+  (
+    key: "SEO",
+    description: "ing: Search Engine Optimization. Ottimizzazione per i motori di ricerca. Insieme di tecniche e pratiche per migliorare la visibilità di un sito web sui motori di ricerca.",
   ),
 )
 
