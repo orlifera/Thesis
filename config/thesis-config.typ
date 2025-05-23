@@ -35,6 +35,9 @@
       [],
     )
   }
+  show ref: it => {
+    text(size: 1.2em, sub("[" + it + "]"))
+  }
 
   body
 }

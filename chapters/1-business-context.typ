@@ -40,7 +40,7 @@
 
 == Motivazioni e Contesto
 
-Il corso di laurea triennale in _Informatica_ che offre l'Ateneo dell'_Università Di Padova_ è a numero chiuso, con un massimo di 222 postim cifra che nel corso degli anni è aumentata di paripasso con il numero di iscritti. Tuttavia, le scuole di provenienza delle matricole mostrano una grande disparità, con il numero degli studenti provenienti da istituti ad indirizzo informatico (come istituti tenici o liceo delle sicenze applicate) che supera di gran lunga il numero di studenti provenienti da licei tradizionali. In particolare, parliamo di circa il 75% di studenti che proviene da istituti tecnici, e il circa il 25% proveniente da altri istituti.
+Il corso di laurea triennale in _Informatica_ che offre l'Ateneo dell'_Università Di Padova_ è a numero chiuso, con un massimo di 220 posti, cifra che nel corso degli anni è aumentata visto il grande interesse da parte di studenti delle superiori di intraprendere questo percorso. Tuttavia, le scuole di provenienza delle matricole mostrano una grande disparità, con il numero degli studenti provenienti da istituti ad indirizzo informatico (come istituti tenici o liceo delle scienze applicate) che supera di gran lunga il numero di studenti provenienti da licei tradizionali. In particolare, parliamo di circa il 75% di studenti che proviene da istituti tecnici, con il restante 25% proveniente da altre scuole.
 
 Questa disparità è data sicuramente dalla "credenza" che l'informatica sia solo programmazione e che quindi uno studente proveniente da un Liceo Scientifico non abbia le competenze necessarie per questo affrontare questo percorso.
 
@@ -48,7 +48,7 @@ Tuttavia, di contro a questa "credenza", non mancano le competenze, ma solamente
 
 Lo scopo di questo tirocinio, quindi, è proprio quello di dimostrare a tutti gli studenti che hanno un interesse in informatica, che non importa quale sia il loro _background_ scolastico per affrontare questo percorso.
 
-Altro obiettivo molto importante, è quello di aumentare il numero di iscritti donna, dimostrando, grazie anche a vari testimonial (#link("https://womenincs.math.unipd.it")[#underline(text("WomenInCS", fill: blue.darken(30%)))], dimostrando alle varie studentesse, che la storia dell'informatica è stata fatta in non piccola parte da donne e scenziate.
+Altro obiettivo molto importante, è quello di aumentare il numero di iscritti donna, dimostrando, grazie anche a vari testimonial (#link("https://womenincs.math.unipd.it")[#underline(text("WomenInCS", fill: blue.darken(30%)))], alle varie studentesse, che la storia dell'informatica è stata fatta in non piccola parte da donne e scenziate.
 
 L'informatica non è solo programmazione, ma è anche progettazione e design. Infatti, il mio progetto si basa sulla creazione di un'applicazione web interattiva, che richiede competenze di progettazione e design oltre a quelle di programmazione.
 
@@ -62,7 +62,7 @@ Personalmente, essendo uno di quei ragazzi timorosi di iniziare il percorso, arr
 
 == Strumenti e processi
 
-Durante il corso del tirocinio, mi sono avvalso di diversi strumenti che ho imparato ad utilizzare nel corso della mia carriera universitaria, e che mi hanno aiutato a portare avanti il mio progetto, come #glossary("Git") e #glossary("GitHub"), utilissimi per tenere traccia di ogni modifica effettuata al codice sorgente dell'applicazione, nonché per la condivisione di tale codice con la mia Relatrice. Inoltre, come già anticipato, ho scelto di utilizzare dei framework di #glossary("ReactJS") per lo sviluppo del mio progetto. Tutte le tecnologie saranno discusse nel dettaglio #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))].
+Durante il corso del tirocinio, mi sono avvalso di diversi strumenti che ho imparato ad utilizzare nel corso della mia carriera universitaria, e che mi hanno aiutato a portare avanti il mio progetto, come #glossary("Git") e #glossary("GitHub"), utilissimi per tenere traccia di ogni modifica effettuata al codice sorgente dell'applicazione, nonché per la condivisione di tale codice con la mia relatrice. In ogni caso, tutte le tecnologie saranno discusse nel dettaglio #link(<stage-purpose>)[#text("secondo capitolo", fill: blue)].
 
 === Suddivisione del lavoro
 
@@ -70,7 +70,7 @@ Dovendo presentare un #glossary("Piano di Lavoro") per inizire il mio tirocino, 
 
 Ho quindi dapprima definito tutti gli obiettivi da raggiungere durante il percorso, trovandone 19. A questo punto, ho suddiviso il lavoro da svolgere nelle 8 settimane, potendo quindi definire degli "#glossary("sprint")". A fine di ogni sprint, controllo di aver completato tutto ciò che mi ero prefissato nel #glossary("backlog") di lavoro e, se ci fosse qualcosa che non ho completato, lo sposto nel backlog del prossimo sprint.
 
-Per il tracciamento, come menzionato sopra, in una #glossary("Kanban") board, divisa in 3 colonne:
+Per il tracciamento, come menzionato sopra, in una #glossary("Kanban") board#ref(<KanBoard>, form: "normal", supplement: none), divisa in 3 colonne:
 + ToDo: attività da completare
 + In Progress: attività in corso
 + Done: attività completate
@@ -78,7 +78,7 @@ Per il tracciamento, come menzionato sopra, in una #glossary("Kanban") board, di
 #figure(
   image("/images/kanban.png", width: 100%),
   caption: "vista della Kanban alla seconda settimana",
-)
+)<KanBoard>
 
 Inoltre, per visualizzare i tempi di svolgimento previsti ed effettivi, ho deciso di utilizzare un diagramma di Gantt.
 #figure(
@@ -105,4 +105,4 @@ Oltre alla struttura qui sopra descritta, si adottano anche i seguenti accorgime
 
 - le abbreviazioni, termini tecnici (o comunque di uso non comune), o in lingua straniera in prima occorrenza nel documento sono definiti nel glossario consultabile alla fine del documento. Ogni termine nel glossario è evidenziato come segue: #dummy("Parola").
 
-- Altri termini che richiedono un'attenzione particolare, ma che non hanno bisogno di essere definiti, saranno evidenziati in corsivo: _Parola_
+- Altri termini che richiedono un'attenzione particolare, ma che non hanno bisogno di essere definiti, saranno evidenziati in corsivo: _Parola_.
