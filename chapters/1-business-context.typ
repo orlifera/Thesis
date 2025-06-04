@@ -44,11 +44,9 @@ Il corso di laurea triennale in _Informatica_ che offre l'Ateneo dell'_Universit
 
 Questa disparità è data sicuramente dalla "credenza" che l'informatica sia solo programmazione e che quindi uno studente proveniente da un Liceo Scientifico non abbia le competenze necessarie per questo affrontare questo percorso.
 
-Tuttavia, di contro a questa "credenza", non mancano le competenze, ma solamente le conoscenze, che è proprio il vuoto che questo corso va a colmare. Se magari uno studente proveniente da un istituto tecnico ha già delle competenze di programmazione, uno studente proveniente da un liceo scientifico ha sicuramente delle competenze matematiche e logiche che sono fondamentali per affrontare questo percorso.
+Tuttavia, di contro a questa "credenza", è ovvio che non mancano le competenze, ma solamente le conoscenze, che è proprio il vuoto che questo corso va a colmare. Se magari uno studente proveniente da un istituto tecnico ha già delle competenze di programmazione, uno studente proveniente da un liceo scientifico ha sicuramente delle competenze matematiche e logiche che sono fondamentali per affrontare questo percorso.
 
-Lo scopo di questo tirocinio, quindi, è proprio quello di dimostrare a tutti gli studenti che hanno un interesse in informatica, che non importa quale sia il loro _background_ scolastico per affrontare questo percorso.
-
-Altro obiettivo molto importante, è quello di aumentare il numero di iscritti donna, dimostrando, grazie anche a vari testimonial (#link("https://womenincs.math.unipd.it")[#underline(text("WomenInCS", fill: blue.darken(30%)))], alle varie studentesse, che la storia dell'informatica è stata fatta in non piccola parte da donne e scenziate.
+Altro obiettivo molto importante, è quello di aumentare il numero di iscritti di genere femminile, dimostrando, grazie anche a vari testimonial (#link("https://womenincs.math.unipd.it")[#underline(text("WomenInCS", fill: blue.darken(30%)))]) alle varie studentesse, che la storia dell'informatica è stata fatta in non piccola parte da donne e scenziate.
 
 L'informatica non è solo programmazione, ma è anche progettazione e design. Infatti, il mio progetto si basa sulla creazione di un'applicazione web interattiva, che richiede competenze di progettazione e design oltre a quelle di programmazione.
 

@@ -11,16 +11,16 @@
 #set math.equation(numbering: num => "(" + (str(counter(heading).get().at(0)) + "." + str(num)) + ")")
 #set figure(numbering: num => str(counter(heading).get().at(0)) + "." + str(num))
 
-#pagebreak(to: "odd")
+#pagebreak()
 
-= Svolgimento del progetto
+= Implementazione
 <cap:stage-description>
 
 #v(1em)
 #text(
   style: "italic",
   [
-    bruh.
+    Espone come le scelte descritte nel capitolo precedente sono state implementate, attraverso una panoramica del codice sorgente, delle feature di accessibilità e delle best practices attuate durante il processo di sviluppo.
   ],
 )
 #v(1em)
