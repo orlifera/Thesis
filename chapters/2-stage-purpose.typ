@@ -94,18 +94,18 @@ Come anticipato, questi obiettivi sono stati in parte rivisti in corso d'opera i
 *Obbligatori*
 - O01: implementazione dell'applicativo;
 - O02: funzionamento base dello stesso;
-- O03: primo problema: lettore - scrittore (molto più adatto al contesto);
+- O03: primo problema: lettore - scrittore;
 - O04: Inserimento di username e scuola di provenienza per tenere traccia dell'utilizzo dell'applicativo;
 
 *Facoltativi*
-- F01: implementare il problema dei filosofi a cena;
+- F01: implementare il problema dei filosofi a cena; (cambierei questo in produttore - consumatore se è daccordo)
 - F02: possibilità di inserire una sequenza di operazioni;
 - F03: Visualizzione delle statistiche di risposte ai quesiti posti agli utenti;
 
 *Desiderabili*
 - D01: Creazione di un'area riservata per l'amministratore senza necessità di login particolari;
 - D02: visualizzazione di una dashboard con tutti gli utenti;
-- D03: simulazione della sequenza di operazione eseguita come live demo;
+- D03: simulazione della sequenza di operazione eseguita come live demo; (se è daccordo, questo lo rimuovo visto che abbiamo deciso di non implementarlo)
 
 Alla fine del progetto, la percentuale di obiettivi completati risulta la seguente:
 
@@ -114,7 +114,7 @@ Alla fine del progetto, la percentuale di obiettivi completati risulta la seguen
 - Desiderabili: 70%
 - Facoltativi: 70%
 
-con un totale di obiettivi completati pari al 70%.
+con un totale di obiettivi completati pari al 80%.
 
 COMMENTO(questo dato dovrebbe cambiare in futuro, in base all'implementazione dei video simulazione e dei grafici delle risposte)
 
