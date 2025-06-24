@@ -3,7 +3,7 @@
   myAuthor: "Orlando Ferazzani",
   myTitle: "WebApp per attività laboratoriali di OpenDay",
   myLang: "it",
-  myNumbering: "1/1",
+  myNumbering: "1.1",
   body,
 ) = {
   // Set the document's basic properties.

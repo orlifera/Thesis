@@ -75,6 +75,18 @@
     key: "SEO",
     description: "ing: Search Engine Optimization. Ottimizzazione per i motori di ricerca. Insieme di tecniche e pratiche per migliorare la visibilità di un sito web sui motori di ricerca.",
   ),
+  (
+    key: "proponente",
+    description: "Colui che propone un progetto o un'idea. In questo caso, si riferisce all'Università di Padova",
+  ),
+  (
+    key: "interfaccia utente (UI)",
+    description: "Interfaccia utente. Parte di un'applicazione o di un sito web con cui l'utente interagisce direttamente.",
+  ),
+  (
+    key: "Firebase",
+    description: "Piattaforma di sviluppo di applicazioni web e mobili che offre servizi come database in tempo reale, autenticazione e hosting.",
+  ),
 )
 
 #register-glossary(entry-list)

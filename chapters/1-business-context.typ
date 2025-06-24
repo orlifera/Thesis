@@ -87,11 +87,20 @@ Invece, per visualizzare i tempi di svolgimento previsti ed effettivi di tali ta
 
 Tutto questo è conforme al metodo di lavoro #glossary("Scrum"), che prevede una suddivisione del lavoro in sprint e un monitoraggio costante dei progressi. Lo Scrum fa parte della metodologia Agile#sub[@manifesto_agile], creata per migliorare lo sviluppo di prodotti software rallentati dalle tediose fasi di analisi e documentazione.
 
+#text(
+  fill: blue,
+  "Dato che il progetto è stato svolto in singolo, mi sono impegnato a mantenere un ritmo di lavoro costate, e di fornire aggiornamenti settimanali alla #myProf, via email o incontri di persona, per discutere i progressi, le difficoltà incontrate e risolvere eventuali problemi prima di andare eccessivamente fuori strada.",
+)
+
 == Struttura del Documento
 
 - *Cosa*: Il #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))] fornisce una panoramica di tutto il progetto, dal suo scopo, a i prodotti attesi, descrivendo nel dettaglio il concetto di webapp interattiva e le tecnologie utilizzate e le motivazioni dietro queste.
 
-- *Come*: Il #link(<stage-description>)[#text("terzo capitolo", fill: blue.darken(30%))] espone come le scelte descritte nel capitolo precedente sono state implementate. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di accessibilità.
+#text(fill: blue)[
+  - *Analisi dei Requisiti*: Il #link(<adr>)[#text("terzo capitolo", fill: blue.darken(30%))] fornisce una panoramica dei requisiti del progetto, partendo dai requisiti funzionali e non funzionali, passando per i vincoli e le limitazioni, fino ad arrivare ai casi d'uso e alle user stories.
+]
+
+- *Come*: Il #link(<cap:stage-description>)[#text("quarto capitolo", fill: blue.darken(30%))] espone come le scelte descritte nel capitolo precedente sono state implementate. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di accessibilità.
 
 - *Conclusioni*: Il #link(<conclusions>)[#text("quarto capitolo", fill: blue.darken(30%))] fornisce una panoramica dei risultati ottenuti, sia a livello di codice sorgente che di accessibilità. Inoltre, viene fornita una panoramica dei test effettuati e dei risultati ottenuti.
 

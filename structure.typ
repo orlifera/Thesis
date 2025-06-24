@@ -14,8 +14,9 @@
 
 #include "./chapters/1-business-context.typ"
 #include "./chapters/2-stage-purpose.typ"
-#include "./chapters/3-stage-description.typ"
-#include "./chapters/4-conclusions.typ"
+#include "./chapters/3-AdR.typ"
+#include "./chapters/4-stage-description.typ"
+#include "./chapters/5-conclusions.typ"
 
 // Appendix
 #include "./appendix/1-glossary.typ"
