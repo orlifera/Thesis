@@ -94,20 +94,20 @@ Tutto questo è conforme al metodo di lavoro #glossary("Scrum"), che prevede una
 
 == Struttura del Documento
 
-- *Cosa*: Il #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))] fornisce una panoramica di tutto il progetto, dal suo scopo, a i prodotti attesi, descrivendo nel dettaglio il concetto di webapp interattiva e le tecnologie utilizzate e le motivazioni dietro queste.
+- #text(fill: blue)[*Cosa*: Il #link(<stage-purpose>)[#text("secondo capitolo", fill: blue.darken(30%))] fornisce una panoramica di tutto il progetto, dal suo scopo, a i prodotti attesi, descrivendo nel dettaglio il concetto di webapp interattiva ed elencando gli obiettivi di partenza].
 
 #text(fill: blue)[
   - *Analisi dei Requisiti*: Il #link(<adr>)[#text("terzo capitolo", fill: blue.darken(30%))] fornisce una panoramica dei requisiti del progetto, partendo dai requisiti funzionali e non funzionali, passando per i vincoli e le limitazioni, fino ad arrivare ai casi d'uso e alle user stories.
 ]
 
-- *Come*: Il #link(<cap:stage-description>)[#text("quarto capitolo", fill: blue.darken(30%))] espone come le scelte descritte nel capitolo precedente sono state implementate. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di accessibilità.
+- #text(fill: blue)[
+    *Come*: Il #link(<cap:stage-description>)[#text("quarto capitolo", fill: blue.darken(30%))] espone come le scelte descritte nel capitolo precedente sono state implementate e perché sono state scelte determinate tecnologie. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di #glossary("accessibilità").]
 
 - *Conclusioni*: Il #link(<conclusions>)[#text("quarto capitolo", fill: blue.darken(30%))] fornisce una panoramica dei risultati ottenuti, sia a livello di codice sorgente che di accessibilità. Inoltre, viene fornita una panoramica dei test effettuati e dei risultati ottenuti.
 
 - Nel #link(<cap:glossary>)[#text("Glossario", fill: blue.darken(30%))] sono riportati i termini tecnici e le abbreviazioni utilizzate nel corso del documento.
 
-
-
+#v(2em)
 Oltre alla struttura qui sopra descritta, si adottano anche i seguenti accorgimenti tipografici:
 
 - le abbreviazioni, termini tecnici (o comunque di uso non comune), o in lingua straniera in prima occorrenza nel documento sono definiti nel glossario consultabile alla fine del documento. Ogni termine nel glossario è evidenziato come segue: #dummy("Parola").

@@ -91,6 +91,7 @@ Gli obiettivi definiti inizialmente sono stati i seguenti:
 
 Come anticipato, questi obiettivi sono stati in parte rivisti in corso d'opera insieme alla #myProf, e sono stati aggiunti altri obiettivi, che sono stati classificati come segue:
 
+<objectives>
 *Obbligatori*
 - O01: implementazione dell'applicativo;
 - O02: funzionamento base dello stesso;
@@ -105,15 +106,6 @@ Come anticipato, questi obiettivi sono stati in parte rivisti in corso d'opera i
 *Desiderabili*
 - D01: Creazione di un'area riservata per l'amministratore senza necessità di login particolari;
 - D02: visualizzazione di una dashboard con tutti gli utenti;
-
-// Alla fine del progetto, la percentuale di obiettivi completati risulta la seguente:
-
-
-// - Obbligatori: 100%
-// - Desiderabili: 100%
-// - Facoltativi: 100%
-
-// con un totale di obiettivi completati pari al 100%.
 
 
 == Prodotti attesi

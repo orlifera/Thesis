@@ -1,4 +1,4 @@
-#import "@preview/glossarium:0.5.4": make-glossary, gls
+#import "@preview/glossarium:0.5.4": gls, make-glossary
 #import "../config/variables.typ": *
 
 #show: make-glossary
@@ -10,7 +10,7 @@
   it
 }
 #set math.equation(numbering: num => "(" + (str(counter(heading).get().at(0)) + "." + str(num)) + ")")
-#set figure(numbering: num => str(counter(heading).get().at(0)) + "." + str(num))
+// #set figure(numbering: num => str(counter(heading).get().at(0)) + "." + str(num))
 
 #let glossary(word) = {
   let t = gls(word) + sub("G")
@@ -38,27 +38,6 @@ Nello specifico, questo capitolo si propone di:
 - Identificare i requisiti e suddividerli in funzionali e non funzionali.
 - Validare e verificare i requisiti rispettando la Way of Working adottata.
 
-== Tecnologie utilizzate
-
-Le tecnologie utilizzate nel progetto e la loro selezione sono state fatte in comune accordo con la #myProf, tenendo conto delle competenze pregresse, acquisite durante il corso di _Ingegneria del Software_ e delle tecnologie più moderne e adatte al contesto del progetto. Tali scelte sono state fatte con l'obiettivo di assicurare un prodotto finale di alta qualità, facilmente manutenibile e modificabile in futuro, e che potesse essere utilizzato da altri studenti come me, garantendo anche una rapida curva di apprendimento.
-
-=== Typescript
-
-=== Axios
-
-=== Firebase
-
-=== GitHub
-
-=== ShadCN
-
-=== NextJS
-
-Nonstante fin da subito fosse stato chiaro che non sarebbe stato necessario un backend, ho comunque optato per NextJS, perché sapevo che avrei dovuto implementare funzionalità che richiedevano di effettuare chiamate alle #glossary("API") di #glossary("GitHub"). Inoltre, grazie al rendering lato server (SSR) e alla generazione statica delle pagine (SSG) con i #glossary("server-side components"), Next permette di limitare il caricamento di codice `JavaScript` necessario per il rendering della pagina verso il client, rendendo così il sito più leggero sul browser, più veloce e piacevole da utilizzare, e soprattutto più #glossary("SEO") friendly, quindi, in un'ottica aziendale, più _appeasing_ a livello marketing.
-COMMENTO(non so se aggiungere una parte "teorica" su NextJS)
-
-=== TailwindCSS
-Ho scelto di utilizzare TailwindCSS per la sua flessibilità e per la sua capacità di creare interfacce utente reattive e personalizzabili in modo semplice e veloce. Inoltre, grazie alla sua natura _utility-first_, permette di scrivere meno codice CSS, rendendo il progetto più leggero e veloce da caricare, senza preoccupazioni di conflitti tra stili dati dalla rigidità della gerarchia di specificità di CSS.
 
 == Obiettivo del progetto
 
@@ -114,11 +93,20 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 === UC01: Registrazione Utente
 
 #figure(
-  image("/images/uc/registerForm.png", width: 100%),
+  image(
+    "/images/uc/registerForm.png",
+    width: 34em,
+  ),
   caption: "Interfaccia di registrazione utente",
 )
-
-#figure(image("/images/uc/gantt.png"), caption: "UC01: diagramma UML")
+#figure(
+  image(
+    "/images/uc/UML/UC01.png",
+    fit: "contain",
+    width: 49em,
+  ),
+  caption: "UC01: diagramma UML",
+)
 
 *Attori coinvolti*
 
@@ -150,6 +138,10 @@ nome utente non è rispettoso.
 - UC1.2: Visualizzazione messaggio di errore se il nome utente è già stato utilizzato.
 - UC1.3: Visualizzazione messaggio di errore se non sono stati compilati tutti i campi.
 
+*Generalizzazioni*
+- UC1.4: Inserimento nome utente.
+- UC1.5: Selezione scuola di provenienza.
+
 *User story*
 
 - Come utente, voglio potermi registrare al sistema per accedere alle funzionalità, senza fornire dati sensibili.
@@ -157,9 +149,13 @@ nome utente non è rispettoso.
 
 ==== UC1.1: Visualizzazione messaggio di errore se il nome utente non è rispettoso
 
-#figure(image("/images/uc/badWords.png"), caption: "Errore nome utente non rispettoso")
-
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/badWords.png",
+    width: 34em,
+  ),
+  caption: "Errore nome utente non rispettoso",
+)
 
 *Attori coinvolti*
 
@@ -171,7 +167,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente ha inserito un nome utente non rispettoso.
-  - Le API di GitHub sono disponibili e funzionanti..
+  - Le API di GitHub sono disponibili e configurate correttamente.
 - *Postcondizioni*:
   - Il sistema visualizza un messaggio di errore.
 
@@ -185,13 +181,17 @@ nome utente non è rispettoso.
 
 - Quando inserisco un nome utente non rispettoso, il sistema mostra un messaggio di errore così posso correggerlo e ripetere la registrazione.
 
-
 ==== UC1.2: Visualizzazione messaggio di errore se il nome utente è già utilizzato
 
 
-#figure(image("/images/uc/taken.png"), caption: "Errore nome utente già utilizzato")
+#figure(
+  image(
+    "/images/uc/taken.png",
+    width: 34em,
+  ),
+  caption: "Errore nome utente già utilizzato",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -203,7 +203,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - Il nome utente inserito è già utilizzato da un altro utente.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di GitHub sono disponibili e configurate correttamente.
 - *Postcondizioni*:
   - Il sistema visualizza un messaggio di errore.
 
@@ -221,9 +221,13 @@ nome utente non è rispettoso.
 ==== UC1.3: Visualizzazione messaggio di errore se non sono stati compilati tutti i campi
 
 
-#figure(image("/images/uc/missingField.png"), caption: "Errore campo mancante")
-
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/missingField.png",
+    width: 34em,
+  ),
+  caption: "Errore campo mancante",
+)
 
 *Attori coinvolti*
 
@@ -235,7 +239,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente ha inserito un nome utente ma non ha compilato il campo scuola di provenienza.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di GitHub sono disponibili e configurate correttamente.
 - *Postcondizioni*:
   - Il sistema visualizza un messaggio di errore.
 
@@ -249,12 +253,25 @@ nome utente non è rispettoso.
 
 - Quando non compilo tutti i campi richiesti, il sistema mi avvisa con un messaggio di errore così posso completare i dati mancanti.
 
-
 === UC02: Visualizzazione UI
 
-#figure(image("/images/uc/homepage.png"), caption: "Homepage di Thinky")
+#figure(
+  image(
+    "/images/uc/homepage.png",
+    width: 34em,
+    fit: "contain",
+  ),
+  caption: "Homepage di Thinky",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC02: Visualizzazione UI")
+#figure(
+  image(
+    "/images/uc/UML/UC02.png",
+    width: 47em,
+    fit: "contain",
+  ),
+  caption: "UC02: Visualizzazione UI",
+)
 
 *Attori coinvolti*
 
@@ -289,7 +306,13 @@ nome utente non è rispettoso.
 
 ==== UC2.1: Visualizzazione messaggio di errore generico
 
-#figure(image("/images/uc/commonError.png"), caption: "Errore generico")
+#figure(
+  image(
+    "/images/uc/commonError.png",
+    width: 35em,
+  ),
+  caption: "Errore generico",
+)
 
 *Attori coinvolti*
 
@@ -316,9 +339,21 @@ nome utente non è rispettoso.
 
 === UC03: Visualizzazione pagina iniziale laboratorio
 
-#figure(image("/images/uc/step0.png"), caption: "Pagina iniziale del laboratorio")
+#figure(
+  image(
+    "/images/uc/step0.png",
+    width: 35em,
+  ),
+  caption: "Pagina iniziale del laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/UML/UC03.png",
+    width: 47em,
+  ),
+  caption: "UC03: Visualizzazione pagina iniziale laboratorio",
+)
 
 *Attori coinvolti*
 
@@ -329,6 +364,7 @@ nome utente non è rispettoso.
 
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - L'utente è registrato.
   - L'utente ha cliccato sul pulsante "Vai al laboratorio".
 - *Postcondizioni*:
@@ -350,10 +386,14 @@ nome utente non è rispettoso.
 
 ==== UC3.1: Visualizzazione messaggio di errore se il caricamento di _`currentStep`_ non è andato a buon fine
 
-#figure(image("/images/uc/currentStepError.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/currentStepError.png",
+    width: 35em,
+  ),
+  caption: "Errore currentStep",
+)
 
-
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -364,6 +404,7 @@ nome utente non è rispettoso.
 
 - *Precondizioni*:
   - L'utente è registrato.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema è connesso ma la richiesta di _`currentStep`_ fallisce.
 - *Postcondizioni*:
   - Il sistema mostra un messaggio di errore.
@@ -379,7 +420,21 @@ nome utente non è rispettoso.
 
 === UC04: Visualizzazione step progressivi
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/step1.png",
+    width: 34em,
+  ),
+  caption: "Step 1 dei 6 progressivi",
+)
+
+#figure(
+  image(
+    "/images/uc/UML/UC04.png",
+    width: 45em,
+  ),
+  caption: "UC04: Visualizzazione step progressivi",
+)
 
 *Attori coinvolti*
 
@@ -390,8 +445,10 @@ nome utente non è rispettoso.
 
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - L'utente è registrato.
   - L'utente ha visualizzato la pagina iniziale del laboratorio.
+  - L'utente admin ha correttamente avanzato lo step.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step progressivo del laboratorio.
@@ -421,7 +478,13 @@ nome utente non è rispettoso.
 
 ==== UC4.1: Visualizzazione Step 1
 
-#figure(image("/images/uc/step1.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/step1.png",
+    width: 35em,
+  ),
+  caption: "Visualizzazione Step1",
+)
 
 *Attori coinvolti*
 
@@ -432,6 +495,7 @@ nome utente non è rispettoso.
 
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - L'utente è registrato.
   - L'admin ha caricato lo step 1.
   - Il sistema ha caricato _`currentStep`_ correttamente.
@@ -446,7 +510,7 @@ nome utente non è rispettoso.
 
 *Inclusioni*
 
-- UC4.2.1: Drag and Drop
+- UC4.1.1: Drag and Drop
 
 *User story*
 
@@ -454,7 +518,13 @@ nome utente non è rispettoso.
 
 ==== UC4.1.1: Drag and Drop
 
-#figure(image("/images/uc/dnd.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/dnd.png",
+    width: 35em,
+  ),
+  caption: "Drag and Drop",
+)
 
 *Attori coinvolti*
 - *Attori Primari*: Utente
@@ -481,9 +551,14 @@ nome utente non è rispettoso.
 
 ==== UC4.2: Visualizzazione Step 2
 
-#figure(image("/images/uc/step2.png"), caption: "Step 2 del laboratorio")
+#figure(
+  image(
+    "/images/uc/step2.png",
+    width: 35em,
+  ),
+  caption: "Step 2 del laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -494,6 +569,7 @@ nome utente non è rispettoso.
 
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - L'utente è registrato.
   - L'admin ha caricato lo step 2.
   - Il sistema ha caricato _`currentStep`_ correttamente.
@@ -518,9 +594,14 @@ nome utente non è rispettoso.
 
 ==== UC4.3: Visualizzazione Step 3
 
-#figure(image("/images/uc/step3.png"), caption: "Step 3 del laboratorio")
+#figure(
+  image(
+    "/images/uc/step3.png",
+    width: 35em,
+  ),
+  caption: "Step 3 del laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -532,6 +613,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 3.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 3.
@@ -546,9 +628,14 @@ nome utente non è rispettoso.
 
 ==== UC4.4: Visualizzazione Step 4
 
-#figure(image("/images/uc/step4.png"), caption: "Step 4 del laboratorio")
+#figure(
+  image(
+    "/images/uc/step4.png",
+    width: 35em,
+  ),
+  caption: "Step 4 del laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -560,6 +647,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 4.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 4.
@@ -573,9 +661,13 @@ nome utente non è rispettoso.
 
 ==== UC4.5: Visualizzazione Step 5
 
-#figure(image("/images/uc/step5.png"), caption: "Step 5 del laboratorio")
-
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/step5.png",
+    width: 35em,
+  ),
+  caption: "Step 5 del laboratorio",
+)
 
 *Attori coinvolti*
 
@@ -587,6 +679,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 5.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 5.
@@ -608,9 +701,14 @@ nome utente non è rispettoso.
 
 ==== UC4.6: Visualizzazione Step 6
 
-#figure(image("/images/uc/step6.png"), caption: "Step 6 del laboratorio")
+#figure(
+  image(
+    "/images/uc/step6.png",
+    width: 35em,
+  ),
+  caption: "Step 6 del laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -622,6 +720,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 6.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 6.
@@ -643,11 +742,22 @@ nome utente non è rispettoso.
 
 === UC05: Visualizzazione pagina di chiusura laboratorio
 
-#figure(image("/images/uc/step7.png"), caption: "Pagina di chiusura del laboratorio")
+#figure(
+  image(
+    "/images/uc/step7.png",
+    width: 35em,
+  ),
+  caption: "Pagina di chiusura del laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC05: Visualizzazione pagina di chiusura laboratorio")
+#figure(
+  image(
+    "/images/uc/UML/UC05.drawio.png",
+    width: 40em,
+  ),
+  caption: "UC05: Visualizzazione pagina di chiusura laboratorio",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "UC08: Salvataggio user")
 
 *Attori coinvolti*
 
@@ -659,6 +769,7 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 7.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 7.
@@ -680,9 +791,21 @@ nome utente non è rispettoso.
 L'utente Admin è considerabile come una generalizzazione dell'utente target, in quanto ha accesso a tutte le funzionalità della WebApp, ma con privilegi aggiuntivi che gli consentono di gestire il sistema. L'utente Admin, tuttavia, non necessita di passare per la registrazione avendo già le credenziali (in questo caso salvate sul file `.env`). Si considerino quindi solo i seguenti casi d'uso, specifici per l'utente Admin, da sommare ai casi d'uso appena elencati.
 
 === UC06: Login Admin
-#figure(image("/images/uc/loginFormAdmin.png"), caption: "Pagina di accesso Admin")
+#figure(
+  image(
+    "/images/uc/loginFormAdmin.png",
+    width: 35em,
+  ),
+  caption: "Pagina di accesso Admin",
+)
 
-#figure(image("/images/uc/gantt.png"), caption: "Schermata di acesso Admin")
+#figure(
+  image(
+    "/images/uc/UML/UC06.drawio.png",
+    width: 45em,
+  ),
+  caption: "Schermata di acesso Admin",
+)
 
 *Attori coinvolti*
 
@@ -714,7 +837,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC6.1: Visualizzazione messaggio di errore se le credenziali sono errate
 
-#figure(image("/images/uc/errPass.png"), caption: "Errore di accesso")
+#figure(
+  image(
+    "/images/uc/errPass.png",
+    width: 35em,
+  ),
+  caption: "Errore di accesso",
+)
 
 *Attori coinvolti*
 
@@ -742,18 +871,35 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 === UC07: Visualizzazione homepage Admin
 
-#figure(image("/images/uc/homeAdmin.png"), caption: "Visualizzazione homepage Admin")
+#figure(
+  image(
+    "/images/uc/homeAdmin.png",
+    width: 35em,
+  ),
+  caption: "Visualizzazione homepage Admin",
+)
 
+
+#figure(
+  image(
+    "/images/uc/UML/UC07.drawio.png",
+    width: 49em,
+  ),
+  caption: "Visualizzazione homepage Admin",
+)
 
 *Attori coinvolti*
 
 - *Attori Primari*: Utente Admin
+- *Attori Secondari*: GitHub, Firebase
 
 *Precondizioni e Postcondizioni*
 
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Le API di GitHub sono disponibili e configurate correttamente
 - *Postcondizioni*:
   - L'utente Admin visualizza la homepage di amministrazione.
 
@@ -773,7 +919,14 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.1: Visualizzazione scheda lista utenti registrati
 
-#figure(image("/images/uc/tabellaUtenti.png"), caption: "Visualizzazione tabella lista utenti registrati")
+#figure(
+  image(
+    "/images/uc/tabellaUtenti.png",
+    width: 45em,
+    fit: "cover",
+  ),
+  caption: "Visualizzazione tabella lista utenti registrati",
+)
 
 *Attori coinvolti*
 - *Attori Primari*: Utente Admin
@@ -784,7 +937,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di GitHub sono disponibili e configurate correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza la tabella con la lista degli utenti registrati.
 
@@ -796,7 +949,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 *Estensioni*
 
 - UC7.1.1: Visualizzazione messagio per lista vuota.
-- UC7.1.2: Visualizzazione messaggio di errore se il caricamento della lista fallisce.
+
 
 *User Story*
 
@@ -804,7 +957,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC7.1.1: Visualizzazione messaggio per lista vuota
 
-#figure(image("/images/uc/noUser.png"), caption: "Errore lista utenti vuota")
+#figure(
+  image(
+    "/images/uc/noUser.png",
+    width: 35em,
+  ),
+  caption: "Errore lista utenti",
+)
 
 *Attori coinvolti*
 
@@ -816,7 +975,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di GitHub sono disponibili e configurate correttamente.
   - Non ci sono utenti registrati nel sistema.
 - *Postcondizioni*:
   - Il sistema visualizza un messaggio che informa l'utente che la lista è vuota.
@@ -831,37 +990,16 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 - Quando non ci sono utenti registrati, il sistema mostra un messaggio che informa l'utente Admin che la lista è vuota.
 
-==== UC7.1.2: Visualizzazione messaggio di errore se il caricamento della lista fallisce
-
-*Attori coinvolti*
-
-- *Attori Primari*: Utente Admin
-- *Attori Secondari*: GitHub
-
-*Precondizioni e Postcondizioni*
-
-- *Precondizioni*:
-  - Il sistema è connesso e funzionante.
-  - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
-  - Si è verificato un errore durante il caricamento della lista degli utenti registrati.
-- *Postcondizioni*:
-  - Il sistema visualizza un messaggio di errore.
-
-*Scenario principale*
-
-- L'utente Admin accede alla homepage di amministrazione.
-- Il sistema tenta di caricare la lista degli utenti registrati.
-- Si verifica un errore durante il caricamento della lista.
-- Il sistema visualizza un messaggio di errore.
-
-*User Story*
-
-- Se il caricamento della lista degli utenti registrati fallisce, il sistema mostra un messaggio di errore per informare l'utente Admin.
 
 ==== UC07.2: Visualizzazione tab gestione laboratorio
 
-#figure(image("/images/uc/graph3.png"), caption: "vsiualizzazione tab gestione laboratorio")
+#figure(
+  image(
+    "/images/uc/graph3.png",
+    width: 41em,
+  ),
+  caption: "vsiualizzazione tab gestione laboratorio",
+)
 
 *Attori coinvolti*
 
@@ -873,7 +1011,8 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Le API di GitHub sono disponibili e configurate correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza la Tab con le informazioni di laboratorio.
 
@@ -894,7 +1033,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.2.1: Visualizzazione pulsanti della gestione step del laboratorio
 
-#figure(image("/images/uc/buttons.png"), caption: "Pulsanti per la gestione degli step del laboratorio")
+#figure(
+  image(
+    "/images/uc/buttons.png",
+    width: 45em,
+  ),
+  caption: "Pulsanti per la gestione degli step del laboratorio",
+)
 
 *Attori coinvolti*
 
@@ -906,7 +1051,8 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Le API di GitHub sono disponibili e configurate correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza i pulsanti per la gestione degli step del laboratorio.
 
@@ -939,6 +1085,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza il pulsante per l'avanzamento ad un nuovo step.
@@ -965,6 +1112,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
   - _`currentStep`_ >= 1
 - *Postcondizioni*:
@@ -992,7 +1140,8 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Le API di GitHub sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
   - L'utente Admin ha cliccato sul pulsante per l'azzeramento delle statistiche.
 - *Postcondizioni*:
@@ -1022,6 +1171,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
+  - Le API di Firebase sono disponibili e configurate correttamente.
   - Il sistema ha caricato _`currentStep`_ correttamente.
   - L'utente Admin ha cliccato sul pulsante per il reset degli step.
 - *Postcondizioni*:
@@ -1039,7 +1189,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.2.2: Visualizzazione Tab Grafici Step 3
 
-#figure(image("/images/uc/graph3close.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/graph3close.png",
+    width: 40em,
+  ),
+  caption: "Grafici Step3",
+)
 
 *Attori coinvolti*
 
@@ -1051,7 +1207,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di GitHub sono disponibili e configurate correttamente.
   - Il sistema ha caricato i dati di _`chartAnswer.json`_ correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza la Tab con i grafici delle risposte date dagli utenti nello step 3.
@@ -1072,7 +1228,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC7.2.2.1: Visualizzazione messaggio di informazione se il file _`chartAnswer.json`_ è vuoto o avviene un errore generico
 
-#figure(image("/images/uc/chartAnsErr.png"), caption: "Errore durante il caricamento dei dati")
+#figure(
+  image(
+    "/images/uc/chartAnsErr.png",
+    width: 40em,
+  ),
+  caption: "Errore durante il caricamento dei dati",
+)
 
 *Attori coinvolti*
 
@@ -1084,7 +1246,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
   - Il file _`chartAnswer.json`_ è vuoto o si
-  - Le API di GitHub sono disponibili e funzionanti.verifica un errore durante il caricamento dei dati.
+  - Le API di GitHub sono disponibili e configurate correttamente.verifica un errore durante il caricamento dei dati.
 - *Postcondizioni*:
   - Il sistema visualizza un messaggio di informazione che indica che il file _`chartAnswer.json`_ è vuoto.
 
@@ -1101,7 +1263,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.2.3: Visualizzazione Tab Grafici Step 4
 
-#figure(image("/images/uc/graph4.png"), caption: "UC08: Salvataggio user")
+#figure(
+  image(
+    "/images/uc/graph4.png",
+    width: 40em,
+  ),
+  caption: "Grafici Step4",
+)
 
 *Attori coinvolti*
 
@@ -1113,7 +1281,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Le API di GitHub sono disponibili e funzionanti.
+  - Le API di GitHub sono disponibili e configurate correttamente.
   - Il sistema ha caricato i dati di _`chartAnswer.json`_ correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza la Tab con i grafici delle risposte date dagli utenti nello step 4.
@@ -1131,3 +1299,187 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 *User Story*
 
 - Come utente Admin, voglio visualizzare la Tab con i grafici delle risposte date dagli utenti nello step 4 per analizzare le risposte degli utenti e migliorare l'esperienza del laboratorio.
+
+== Requisiti
+
+I requisiti sono stati individuati in base ai casi d'uso e alle user story precedentemente definiti, oltre che in base alle funzionalità richieste. I requisiti sono stati definiti in modo incrementale, partendo da quelli più generali e arrivando a quelli più specifici, e sono variati e aumentati nel tempo.
+
+Ogni requisito è stato identificato con un codice univoco, che ne facilita la consultazione e la gestione. I requisiti sono stati classificati in tre categorie principali: requisiti funzionali, requisiti di qualità e requisiti di vincolo. Questi possono essere consultati nella tabella sottostante, che riporta il codice del requisito, la sua descrizione e la sua priorità, che si distingue in:
+
+- *Obbligatorio*: requisito che deve essere implementato per il corretto funzionamento del sistema e che non può essere omesso.
+
+
+- *Desiderabile*: requisito che migliora significativamente l'esperienza utente, ma che può essere omesso senza compromettere il funzionamento del sistema.
+
+
+- *Opzionale*: requisito che può essere implementato se il tempo lo consente per arricchire le funzionalità. Questi obiettivi possono essere considerati come 'extra' che migliorano l'esperienza utente o aggiungono funzionalità utili
+
+I requisiti di questo progetto sono divisi in:
+
+- *Requisiti funzionali*: Indicano le funzionalità specifiche del sistema, e sono identificati con il prefisso _RF_. Corrispondono agli obiettivi identificati al capitolo #link(<objectives>)[#text(fill: blue, "Obiettivi del progetto")] e ai casi d'uso (e sotto casi d'uso) relativi. Sono definiti il *cosa* del sistema.
+
+- *Requisiti di qualità*: Indicano le caratteristiche qualitative del sistema, e sono identificati con il prefisso _RQ_. Sono definiti il *come* il sistema deve funzionare per garantire la miglior #glossary("User Experience").
+
+- *Requisiti di Vincolo*: Indicano i vincoli esterni al sistema, e sono identificati con il prefisso _RC_. Sono definiti le limitazioni del sistema, tutto ciò che il sistema deve rispettare per mantenere il grado massimo di qualità.
+
+== Requisiti funzionali
+
+#set table(stroke: 1pt, fill: (x, y) => if y == 0 {
+  blue.lighten(65%)
+} else if calc.odd(y) {
+  luma(88.1%)
+} else {
+  white
+})
+
+
+#show table.cell: it => {
+  if it.y == 0 {
+    strong(align(center, it))
+  } else {
+    it
+  }
+}
+
+#figure(
+  table(
+    align: center + horizon,
+    columns: (auto, auto, auto),
+    [Codice], [Descrizione], [Priorità],
+    [*RF01*], [Il prodotto deve essere implementato correttamente ed essere funzionante], [Obbligatorio],
+    [*RF02*], [Il prodotto deve rappresentare il problema dei lettori-scrittori], [Obbligatorio],
+    [*RF03*], [L'utente deve potersi registrare senza utilizzo di dati personali (UC01)], [Obbligatorio],
+    [*RF04*],
+    [L'utente deve visualizzare un messaggio che lo informa che il nome utente scelto non è rispettoso UC1.1],
+    [Obbligatorio],
+
+    [*RF05*],
+    [L'utente deve visualizzare un messaggio che lo informa che il nome utente scelto è già in uso UC1.2],
+    [Obbligatorio],
+
+    [*RF06*],
+    [L'utente deve visualizzare un messaggio che lo informa che deve compilare tutti i campi UC1.3],
+    [Obbligatorio],
+
+    [*RF07*], [L'utente deve visualizzare l'applicazione dopo la corretta registrazione (UC02)], [Obbligatorio],
+    [*RF08*], [L'utente deve poter visualizzare un messaggio di errore generico in caso di problemi], [Obbligatorio],
+    [*RF09*], [L'utente deve visualizzare la pagina del laboratorio], [Obbligatorio],
+    [*RF10*], [L'utente deve poter visualizzare gli step progressivi del laboratorio (UC04)], [Obbligatorio],
+    [*RF11*], [L'utente deve poter visualizzare la pagina di chiusura del laboratorio (UC05)], [Obbligatorio],
+    [*RF12*], [L'utente Admin deve poter accedere al sistema (UC06)], [Obbligatorio],
+    [*RF13*], [L'utente Admin deve poter visualizzare la homepage di amministrazione (UC07)], [Obbligatorio],
+    [*RF14*], [L'utente Admin deve poter visualizzare la lista degli utenti registrati (UC07.1)], [Obbligatorio],
+    [*RF15*],
+    [
+      L'utente Admin deve poter visualizzare un messaggio di errore se il caricamento della lista degli utenti fallisce
+      (UC07.1.2)
+    ],
+    [Obbligatorio],
+
+    [*RF16*],
+    [L'utente Admin deve poter visualizzare la Tab con le informazioni di laboratorio (UC07.2)],
+    [Obbligatorio],
+
+    [*RF17*],
+    [
+      L'utente Admin deve poter visualizzare i pulsanti per la gestione degli step del laboratorio (UC07.2.1)
+    ],
+    [Obbligatorio],
+
+    [*RF18*],
+    [
+      L'utente Admin deve poter visualizzare i grafici delle risposte date dagli utenti nello step 3
+      (UC07.2.2)
+    ],
+    [Facoltativo],
+
+    [*RF19*],
+    [
+      L'utente Admin deve poter visualizzare i grafici delle risposte date dagli utenti nello step 4
+      (UC07.2.3)
+    ],
+    [Facoltativo],
+
+    [*RF20*],
+    [
+      Il sistema deve implementare il problema dei produttori-consumatori
+    ],
+    [Facoltativo],
+
+    [*RF21*],
+    [
+      Il sistema deve dare all'utente la possibilità di inserire una sequenza di operazioni (UC4.2.1: Drag and Drop)
+    ],
+    [Facoltativo],
+  ),
+  caption: "Requisiti funzionali",
+)
+
+== Requisiti di qualità
+
+#figure(caption: "Requisiti di qualità", table(
+  align: center + horizon,
+  columns: (auto, auto, auto),
+  [Codice], [Descrizione], [Priorità],
+  [*RQ01*], [Il sistema deve essere facilmente utilizzabile e intuitivo per l'utente], [Obbligatorio],
+  [*RQ02*], [Il sistema deve essere veloce e reattivo], [Obbligatorio],
+  [*RQ03*], [Il sistema deve avere le minime basi di sicurezza informatica], [Obbligatorio],
+  [*RQ04*], [Il codice del sistema deve essere di libera consultazione su una singola repo di GitHub], [Obbligatorio],
+  [*RQ05*],
+  [Il sistema deve essere facilmente manutenibile e aggiornabile da sviluppatori diversi dal Laureando],
+  [Obbligatorio],
+
+  [*RQ06*], [Il sistema deve garantire almeno il 90% di copertura di obiettivi completati], [Obbligatorio],
+))
+
+== Requisiti di vincolo
+
+#figure(
+  caption: "Requisiti di vincolo",
+  table(
+    align: center + horizon,
+    columns: (auto, auto, auto),
+    [Codice], [Descrizione], [Priorità],
+    [*RV01*], [Il sistema deve essere sviluppato in TypeScript], [Obbligatorio],
+    [*RV02*],
+    [Il sistema deve essere compatibile e funzionare con disinvoltura con la versione 140.0 o superiore di Firefox, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Firefox],
+    [Obbligatorio],
+
+    [*RV03*],
+    [Il sistema deve essere compatibile e funzionare con disinvoltura con la versione 137.0.7151.120 o superiore di Chrome che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Chrome],
+    [Obbligatorio],
+
+    [*RV04*],
+    [Il sistema deve essere compatibile e funzionare con disinvoltura con la versione 18.1.0 o superiore di Safari, che è l'ultima disponibile al momento della stesura di questo documento, e che quindi sia accessibile da ogni sistema operativo che supporta Safari],
+    [Obbligatorio],
+
+    [*RV05*],
+    [Il sistema deve rispettare le best practices del web development e rispettare gli standard di accessibilità dettati dallo standard internazionale W3C WCAG 2.1 AAA
+      (Web Content Accessibility Guidelines)],
+    [Obbligatorio],
+
+    [*RV06*],
+    [Il sistema deve essere compatibile con diverse dimensioni di schermo, rendendolo completamente #glossary("responsive")],
+    [Obbligatorio],
+
+    [*RV07*],
+    [Il sistema deve essere compatibile con i diversi sistemi operativi (sia per dispositivi mobili che per desktop), come Windows, macOS, Linux, Android e iOS],
+    [Obbligatorio],
+  ),
+)
+
+== Copertura dei requisiti
+
+Alla fine dello sviluppo del progetto, è stato effettuato un controllo della copertura dei requisiti, per verificare che tutti i requisiti definiti fossero stati implementati correttamente. La copertura dei requisiti è stata calcolata come rapporto tra il numero di requisiti implementati e il numero totale di requisiti definiti.
+
+Considerando NR il numero totale di requisiti definiti e NI il numero di requisiti implementati, la copertura dei requisiti è stata calcolata come segue:
+
+$
+  "Copertura Requisiti" = ("NR" / "NI" ) * 100
+$
+
+Dove:
+- NR = 9, obiettivi richiesti, come dal capitolo #link(<objectives>)[#text(fill: blue, "Obiettivi del progetto")]).
+- NI = 9, obiettivi effettivamente implementati.
+
+È stata raggiunta una copertura dei requisiti del 100%, in quanto tutti i requisiti definiti sono stati implementati correttamente. Questo garantisce che il sistema soddisfi le aspettative minime e le esigenze degli utenti, come definito nei casi d'uso e nelle user story, oltre che ad avere tutti gli 'extra' menzionati in questo capitolo.

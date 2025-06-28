@@ -87,6 +87,19 @@
     key: "Firebase",
     description: "Piattaforma di sviluppo di applicazioni web e mobili che offre servizi come database in tempo reale, autenticazione e hosting.",
   ),
+  (
+    key: "User Experience",
+    short: "UX",
+    description: "Esperienza utente. Rappresenta l'esperienza complessiva di un utente nell'interagire con un prodotto o un servizio, in questo caso Thinky.",
+  ),
+  (
+    key: "responsive",
+    description: "Responsive. Design reattivo. Approccio al design web che consente a un sito web di adattarsi a diverse dimensioni di schermo e dispositivi, garantendo una buona esperienza utente su desktop, tablet e smartphone.",
+  ),
+  (
+    key: "accessibilità",
+    description: "Accessibilità. Pratica di progettazione e sviluppo che mira a rendere i contenuti e le funzionalità di un sito web o di un'applicazione utilizzabili da tutti, comprese le persone con disabilità.",
+  ),
 )
 
 #register-glossary(entry-list)
