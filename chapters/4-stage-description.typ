@@ -9,7 +9,7 @@
   counter(math.equation).update(0)
   counter(figure.where(kind: image)).update(0)
   counter(figure.where(kind: table)).update(0)
-  counter(figure.where(kind: raw)).update(0)
+  counter(figure.where(kind: sourcecode)).update(0)
   it
 }
 

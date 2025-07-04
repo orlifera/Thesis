@@ -31,6 +31,6 @@
 
 #outline(
   title: "Lista codice",
-  target: figure.where(kind: sourcecode),
+  target: figure.where(kind: raw),
   indent: auto,
 )
