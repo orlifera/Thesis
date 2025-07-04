@@ -1,4 +1,4 @@
-#import "@preview/glossarium:0.5.4": make-glossary, gls
+#import "@preview/glossarium:0.5.4": gls, make-glossary
 #import "../config/variables.typ": *
 
 #show: make-glossary

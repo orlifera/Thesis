@@ -1,5 +1,5 @@
 #import "../config/constants.typ": abstract
-#import "@preview/glossarium:0.5.4": make-glossary, gls, print-glossary, register-glossary
+#import "@preview/glossarium:0.5.4": gls, make-glossary, print-glossary, register-glossary
 #import "../config/variables.typ": *
 #import "../appendix/entries.typ": entry-list
 #import "../config/thesis-config.typ"
@@ -19,7 +19,7 @@
 
 #v(1em)
 
-Il seguente elaborato descrive l'attività di tirocinio, della durata complessiva di xxx ore, svolta presso l'Università di Padova.
+Il seguente elaborato descrive l'attività di tirocinio, della durata complessiva di 313 (trecentotredici) ore, svolta presso l'Università di Padova.
 Questa attività è stata portata avanti sotto la guida della #myProf. Il #myTutor ha ricoperto il ruolo di tutor accademico.
 
 

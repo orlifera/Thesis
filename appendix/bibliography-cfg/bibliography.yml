@@ -3,3 +3,58 @@ manifesto_agile:
   title: Manifesto tetet Agile Software Development
   author: ["Robert C. Martin", "Kent Beck", "Martin Fowler", "altri"]
   url: http://agilemanifesto.org/
+
+nextjs-docs:
+  type: web
+  title: Next.js Documentation
+  url: https://nextjs.org/docs
+
+shadcn-docs:
+  type: web
+  title: ShadCN Documentation
+  url: https://ui.shadcn.com/docs
+
+tailwind:
+  type: web
+  title: TailwindCSS Documentation
+  url: https://tailwindcss.com/docs
+
+axios:
+  type: web
+  title: Axios Documentation
+  url: https://axios-http.com/docs/intro
+
+firebase:
+  type: web
+  title: Firebase Documentation
+  url: https://firebase.google.com/docs
+
+github:
+  type: web
+  title: GitHub Documentation
+  url: https://docs.github.com/en
+
+ssc:
+  type: web
+  title: Server-Side Components
+  url: https://react.dev/reference/rsc/server-components
+
+csc:
+  type: web
+  title: Client-Side Components
+  url: https://react.dev/reference/rsc/use-client
+
+lucide:
+  type: web
+  title: Lucide Icons Documentation
+  url: https://lucide.dev/
+
+dndkit:
+  type: web
+  title: DND Kit Documentation
+  url: https://docs.dndkit.com/
+
+typescript:
+  type: web
+  title: TypeScript Documentation
+  url: https://www.typescriptlang.org/docs/

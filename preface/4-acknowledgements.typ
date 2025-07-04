@@ -1,4 +1,4 @@
-#import "../config/variables.typ": profTitle, myProf, myLocation, myTime, myName
+#import "../config/variables.typ": myLocation, myName, myProf, myTime, profTitle
 #import "../config/constants.typ": acknlowledgements
 
 #set par(first-line-indent: 0pt)
@@ -7,9 +7,10 @@
 
 #text(24pt, weight: "semibold", acknlowledgements)
 
-#text(style: "italic", myLocation + ", " + myTime + h(1fr) + myName)
-
+ringraziamento qua
 #v(1fr)
 
-#pagebreak()
+#text(style: "italic", myLocation + ", " + myTime + h(1fr) + myName)
+
 #set page(numbering: none)
+

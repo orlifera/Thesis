@@ -43,3 +43,15 @@
   show figure.caption: emph
   body
 }
+
+#let code-pill(word) = box(
+  fill: rgb("#d2d0d0"), // Background color similar to your image
+  radius: 0.3em, // Rounded corners
+  outset: 0.2em,
+  text(
+    fill: rgb("#ff1717"), // Text color (light mint)
+    font: "JetBrainsMono NF", // Monospace font
+    size: 0.9em, // Uncomment if you want to set a specific size
+    word,
+  ),
+)

@@ -1,5 +1,6 @@
 #import "@preview/glossarium:0.5.4": gls, make-glossary
 #import "../config/variables.typ": *
+#import "../config/thesis-config.typ": *
 
 #show: make-glossary
 #show heading.where(level: 1): it => {
@@ -20,12 +21,9 @@
 #pagebreak()
 = Analisi dei Requisiti
 <adr>
-#text(
-  style: "italic",
-  [
-    Il prossimo capitolo fornisce una panoramica dettagliata del progetto di stage, partendo dal suo scopo, passando per gli obiettivi prefissati e le tecnologie utilizzate, arrivando ai prodotti attesi.
-  ],
-)
+#text(style: "italic", [
+  Il seguente capitolo riporta l'analisi dei requisiti di Thinky, con i relativi casi d'uso e diagrammi UML.
+])
 #v(1em)
 
 L'analisi dei requisiti è una fase, e di conseguenza, un documento (o in questo caso, capitolo), fondamentale nel ciclo di vita di un progetto.
@@ -46,12 +44,11 @@ Nello specifico, questo capitolo si propone di:
 L'app utilizza diversi strumenti per fornire all'utente un'esperienza interattiva e coinvolgente, senza esagerare nella difficoltà, sia di utilizzo che dell'attività da svolgere.
 
 == Utenti Target
-
+<utenti>
 Gli utenti target di Thinky sono principalmente studenti delle scuole superiori che sono interessati a iscriversi al corso di laurea in _Informatica_ dell'_Università di Padova_. In particolare, si rivolge a:
 
 - Ragazzi e Ragazze di età compresa tra i 17 e i 19 anni, che stanno per diplomarsi e sono interessati a intraprendere un percorso di studi in informatica;
-- Studenti provenienti da istituti tecnici e professionali, che potrebbero avere una formazione di
-base in informatica;
+- Studenti provenienti da istituti tecnici e professionali, che potrebbero avere una formazione di base in informatica;
 - Studenti provenienti da licei scientifici e classici, che potrebbero avere una formazione più analitico-matematica ma sono interessati a esplorare il mondo della programmazione e dello sviluppo software;
 
 
@@ -90,23 +87,23 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 == Definizione dei casi d'uso Utente target
 
-=== UC01: Registrazione Utente
+=== UC01: Registrazione Utente @uc1
 
+// #figure(
+// image(
+// "/images/uc/registerForm.png",
+// width: 34em,
+// ),
+// caption: "Interfaccia di registrazione utente",
+// )
 #figure(
   image(
-    "/images/uc/registerForm.png",
-    width: 34em,
-  ),
-  caption: "Interfaccia di registrazione utente",
-)
-#figure(
-  image(
-    "/images/uc/UML/UC01.png",
+    "/images/uc/UML/UC01.drawio.png",
     fit: "contain",
     width: 49em,
   ),
   caption: "UC01: diagramma UML",
-)
+)<uc1>
 
 *Attori coinvolti*
 
@@ -133,8 +130,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *Estensioni*
 
-- UC1.1: Visualizzazione messaggio di errore se il
-nome utente non è rispettoso.
+- UC1.1: Visualizzazione messaggio di errore se il nome utente non è rispettoso.
 - UC1.2: Visualizzazione messaggio di errore se il nome utente è già stato utilizzato.
 - UC1.3: Visualizzazione messaggio di errore se non sono stati compilati tutti i campi.
 
@@ -149,13 +145,13 @@ nome utente non è rispettoso.
 
 ==== UC1.1: Visualizzazione messaggio di errore se il nome utente non è rispettoso
 
-#figure(
-  image(
-    "/images/uc/badWords.png",
-    width: 34em,
-  ),
-  caption: "Errore nome utente non rispettoso",
-)
+// #figure(
+//   image(
+//     "/images/uc/badWords.png",
+//     width: 34em,
+//   ),
+//   caption: "Errore nome utente non rispettoso",
+// )
 
 *Attori coinvolti*
 
@@ -184,13 +180,13 @@ nome utente non è rispettoso.
 ==== UC1.2: Visualizzazione messaggio di errore se il nome utente è già utilizzato
 
 
-#figure(
-  image(
-    "/images/uc/taken.png",
-    width: 34em,
-  ),
-  caption: "Errore nome utente già utilizzato",
-)
+// #figure(
+//   image(
+//     "/images/uc/taken.png",
+//     width: 34em,
+//   ),
+//   caption: "Errore nome utente già utilizzato",
+// )
 
 
 *Attori coinvolti*
@@ -221,13 +217,13 @@ nome utente non è rispettoso.
 ==== UC1.3: Visualizzazione messaggio di errore se non sono stati compilati tutti i campi
 
 
-#figure(
-  image(
-    "/images/uc/missingField.png",
-    width: 34em,
-  ),
-  caption: "Errore campo mancante",
-)
+// #figure(
+//   image(
+//     "/images/uc/missingField.png",
+//     width: 34em,
+//   ),
+//   caption: "Errore campo mancante",
+// )
 
 *Attori coinvolti*
 
@@ -253,25 +249,25 @@ nome utente non è rispettoso.
 
 - Quando non compilo tutti i campi richiesti, il sistema mi avvisa con un messaggio di errore così posso completare i dati mancanti.
 
-=== UC02: Visualizzazione UI
+=== UC02: Visualizzazione UI @uc2
+
+// #figure(
+//   image(
+//     "/images/uc/homepage.png",
+//     width: 34em,
+//     fit: "contain",
+//   ),
+//   caption: "Homepage di Thinky",
+// )
 
 #figure(
   image(
-    "/images/uc/homepage.png",
-    width: 34em,
-    fit: "contain",
-  ),
-  caption: "Homepage di Thinky",
-)
-
-#figure(
-  image(
-    "/images/uc/UML/UC02.png",
+    "/images/uc/UML/UC02.drawio.png",
     width: 47em,
     fit: "contain",
   ),
   caption: "UC02: Visualizzazione UI",
-)
+)<uc2>
 
 *Attori coinvolti*
 
@@ -306,13 +302,13 @@ nome utente non è rispettoso.
 
 ==== UC2.1: Visualizzazione messaggio di errore generico
 
-#figure(
-  image(
-    "/images/uc/commonError.png",
-    width: 35em,
-  ),
-  caption: "Errore generico",
-)
+// #figure(
+//   image(
+//     "/images/uc/commonError.png",
+//     width: 35em,
+//   ),
+//   caption: "Errore generico",
+// )
 
 *Attori coinvolti*
 
@@ -337,23 +333,23 @@ nome utente non è rispettoso.
 - In caso di malfunzionamento, il sistema mostra un messaggio di errore generico così l'utente è informato e può riprovare.
 
 
-=== UC03: Visualizzazione pagina iniziale laboratorio
+=== UC03: Visualizzazione pagina iniziale laboratorio @uc3
+
+// #figure(
+//   image(
+//     "/images/uc/step0.png",
+//     width: 35em,
+//   ),
+//   caption: "Pagina iniziale del laboratorio",
+// )
 
 #figure(
   image(
-    "/images/uc/step0.png",
-    width: 35em,
-  ),
-  caption: "Pagina iniziale del laboratorio",
-)
-
-#figure(
-  image(
-    "/images/uc/UML/UC03.png",
+    "/images/uc/UML/UC03.drawio.png",
     width: 47em,
   ),
   caption: "UC03: Visualizzazione pagina iniziale laboratorio",
-)
+)<uc3>
 
 *Attori coinvolti*
 
@@ -377,22 +373,22 @@ nome utente non è rispettoso.
 
 *Estensioni*
 
-- UC3.1: Visualizzazione messaggio di errore se il caricamento di _`currentStep`_ fallisce.
+- UC3.1: Visualizzazione messaggio di errore se il caricamento dello step corrente fallisce.
 
 *User story*
 
 - Come utente, voglio visualizzare la pagina iniziale del laboratorio per iniziare l'attività.
 
 
-==== UC3.1: Visualizzazione messaggio di errore se il caricamento di _`currentStep`_ non è andato a buon fine
+==== UC3.1: Visualizzazione messaggio di errore se il caricamento dello step corrente non è andato a buon fine
 
-#figure(
-  image(
-    "/images/uc/currentStepError.png",
-    width: 35em,
-  ),
-  caption: "Errore currentStep",
-)
+// #figure(
+//   image(
+//     "/images/uc/currentStepError.png",
+//     width: 35em,
+//   ),
+//   caption: "Errore currentStep",
+// )
 
 
 *Attori coinvolti*
@@ -405,36 +401,36 @@ nome utente non è rispettoso.
 - *Precondizioni*:
   - L'utente è registrato.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema è connesso ma la richiesta di _`currentStep`_ fallisce.
+  - Il sistema è connesso ma la richiesta dello  step corrente fallisce.
 - *Postcondizioni*:
   - Il sistema mostra un messaggio di errore.
 
 *Scenario principale*
 
-- L'interfaccia utente invia una richiesta API a Firebase per la variabile _`currentStep`_, ma la richiesta fallisce.
+- L'interfaccia utente invia una richiesta API a Firebase per la variabile dello step corrente, ma la richiesta fallisce.
 
 *User story*
 
-- Se il caricamento di _`currentStep`_ fallisce, il sistema mostra un messaggio di errore per informare l'utente e consentirgli di riprovare.
+- Se il caricamento dello step corrente fallisce, il sistema mostra un messaggio di errore per informare l'utente e consentirgli di riprovare.
 
 
-=== UC04: Visualizzazione step progressivi
+=== UC04: Visualizzazione step progressivi @uc4
+
+// #figure(
+//   image(
+//     "/images/uc/step1.png",
+//     width: 34em,
+//   ),
+//   caption: "Step 1 dei 6 progressivi",
+// )
 
 #figure(
   image(
-    "/images/uc/step1.png",
-    width: 34em,
-  ),
-  caption: "Step 1 dei 6 progressivi",
-)
-
-#figure(
-  image(
-    "/images/uc/UML/UC04.png",
+    "/images/uc/UML/UC04.drawio.png",
     width: 45em,
   ),
   caption: "UC04: Visualizzazione step progressivi",
-)
+) <uc4>
 
 *Attori coinvolti*
 
@@ -449,7 +445,7 @@ nome utente non è rispettoso.
   - L'utente è registrato.
   - L'utente ha visualizzato la pagina iniziale del laboratorio.
   - L'utente admin ha correttamente avanzato lo step.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step progressivo del laboratorio.
 
@@ -461,7 +457,7 @@ nome utente non è rispettoso.
 
 *Estensioni*
 
-- UC3.1: Visualizzazione messaggio di errore se il caricamento di _`currentStep`_ fallisce.
+- UC3.1: Visualizzazione messaggio di errore se il caricamento dello step corrente fallisce.
 
 *Generalizzazioni*
 
@@ -478,13 +474,13 @@ nome utente non è rispettoso.
 
 ==== UC4.1: Visualizzazione Step 1
 
-#figure(
-  image(
-    "/images/uc/step1.png",
-    width: 35em,
-  ),
-  caption: "Visualizzazione Step1",
-)
+// #figure(
+//   image(
+//     "/images/uc/step1.png",
+//     width: 35em,
+//   ),
+//   caption: "Visualizzazione Step1",
+// )
 
 *Attori coinvolti*
 
@@ -498,7 +494,7 @@ nome utente non è rispettoso.
   - Le API di Firebase sono disponibili e configurate correttamente.
   - L'utente è registrato.
   - L'admin ha caricato lo step 1.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 1.
 
@@ -514,17 +510,17 @@ nome utente non è rispettoso.
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con esso e completare l'attività.
+- Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività.
 
 ==== UC4.1.1: Drag and Drop
 
-#figure(
-  image(
-    "/images/uc/dnd.png",
-    width: 35em,
-  ),
-  caption: "Drag and Drop",
-)
+// #figure(
+//   image(
+//     "/images/uc/dnd.png",
+//     width: 35em,
+//   ),
+//   caption: "Drag and Drop",
+// )
 
 *Attori coinvolti*
 - *Attori Primari*: Utente
@@ -546,18 +542,19 @@ nome utente non è rispettoso.
 
 *User story*
 
-- Come utente, voglio poter trascinare e rilasciare gli elementi dello step 1 per completare l'attività.
+- Come utente, voglio poter trascinare e rilasciare gli elementi.
+  COMMENTO: questo UC è lasciato generico di proposito, in quanto è un'inclusione su altri UC, quindi non sarebbe corretto renderlo più specifico. È d'accordo?
 
 
 ==== UC4.2: Visualizzazione Step 2
 
-#figure(
-  image(
-    "/images/uc/step2.png",
-    width: 35em,
-  ),
-  caption: "Step 2 del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/step2.png",
+//     width: 35em,
+//   ),
+//   caption: "Step 2 del laboratorio",
+// )
 
 
 *Attori coinvolti*
@@ -572,7 +569,7 @@ nome utente non è rispettoso.
   - Le API di Firebase sono disponibili e configurate correttamente.
   - L'utente è registrato.
   - L'admin ha caricato lo step 2.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 2.
   - L'utente può interagire con esso.
@@ -589,18 +586,18 @@ nome utente non è rispettoso.
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 2 del laboratorio per interagire con esso e completare l'attività.
+- Come utente, voglio visualizzare lo step 2 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività..
 
 
 ==== UC4.3: Visualizzazione Step 3
 
-#figure(
-  image(
-    "/images/uc/step3.png",
-    width: 35em,
-  ),
-  caption: "Step 3 del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/step3.png",
+//     width: 35em,
+//   ),
+//   caption: "Step 3 del laboratorio",
+// )
 
 
 *Attori coinvolti*
@@ -614,7 +611,7 @@ nome utente non è rispettoso.
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 3.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 3.
   - L'utente può interagire con esso.
@@ -625,16 +622,22 @@ nome utente non è rispettoso.
 - Il sistema visualizza lo step 3.
 - L'utente può interagire con esso.
 
+*Inclusioni*
+- UC4.3.1: Risposta domande
+
+*User Story*
+
+- Come utente, voglio visualizzare lo step 1 del laboratorio per rispondere alle le domande completando l'attività.
 
 ==== UC4.4: Visualizzazione Step 4
 
-#figure(
-  image(
-    "/images/uc/step4.png",
-    width: 35em,
-  ),
-  caption: "Step 4 del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/step4.png",
+//     width: 35em,
+//   ),
+//   caption: "Step 4 del laboratorio",
+// )
 
 
 *Attori coinvolti*
@@ -648,7 +651,7 @@ nome utente non è rispettoso.
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 4.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 4.
   - L'utente può interagire con esso.
@@ -659,15 +662,22 @@ nome utente non è rispettoso.
 - Il sistema visualizza lo step 4.
 - L'utente può interagire con esso.
 
+*Inclusioni*
+- UC4.4.1: Completamento esercizio Select
+
+*User Story*
+
+- Come utente, voglio visualizzare lo step 4 del laboratorio per completare l'esercizio Select e interagire con esso completando l'attività.
+
 ==== UC4.5: Visualizzazione Step 5
 
-#figure(
-  image(
-    "/images/uc/step5.png",
-    width: 35em,
-  ),
-  caption: "Step 5 del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/step5.png",
+//     width: 35em,
+//   ),
+//   caption: "Step 5 del laboratorio",
+// )
 
 *Attori coinvolti*
 
@@ -680,7 +690,7 @@ nome utente non è rispettoso.
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 5.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 5.
   - L'utente può interagire con esso.
@@ -697,17 +707,17 @@ nome utente non è rispettoso.
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 5 del laboratorio per interagire con esso e completare l'attività.
+- Come utente, voglio visualizzare lo step 5 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività.
 
 ==== UC4.6: Visualizzazione Step 6
 
-#figure(
-  image(
-    "/images/uc/step6.png",
-    width: 35em,
-  ),
-  caption: "Step 6 del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/step6.png",
+//     width: 35em,
+//   ),
+//   caption: "Step 6 del laboratorio",
+// )
 
 
 *Attori coinvolti*
@@ -721,7 +731,7 @@ nome utente non è rispettoso.
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 6.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 6.
   - L'utente può interagire con esso.
@@ -738,17 +748,131 @@ nome utente non è rispettoso.
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 6 del laboratorio per interagire con esso e completare l'attività.
+- Come utente, voglio visualizzare lo step 6 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività.
 
-=== UC05: Visualizzazione pagina di chiusura laboratorio
+==== UC4.3.1: Risposta domande
 
-#figure(
-  image(
-    "/images/uc/step7.png",
-    width: 35em,
-  ),
-  caption: "Pagina di chiusura del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/answerQuestions.png",
+//     width: 35em,
+//   ),
+//   caption: "Risposta domande",
+// )
+
+*Attori coinvolti*
+
+- *Attori Primari*: Utente
+- *Attori Secondari*: GitHub
+
+*Precondizioni e Postcondizioni*
+
+- *Precondizioni*:
+  - Il sistema è connesso e funzionante.
+  - L'utente ha visualizzato lo step 3.
+  - Le API di GitHub sono disponibili e configurate correttamente.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
+- *Postcondizioni*:
+  - L'utente ha risposto alle domande dello step 3.
+  - Il sistema ha salvato le risposte su GitHub.
+
+*Scenario principale*
+- L'utente visualizza lo step 3.
+- Il sistema mostra le domande dello step 3.
+- L'utente risponde alle domande.
+- Il sistema salva le risposte su GitHub.
+
+*Inclusioni*
+
+- UC4.3.1.1: Visualizzazione suggerimento
+
+*User story*
+- Come utente, voglio rispondere alle domande dello step 3 per completare l'attività.
+
+==== UC04.3.1.1: Visualizzazione suggerimento
+
+// #figure(
+//   image(
+//     "/images/uc/suggestion.png",
+//     width: 35em,
+//   ),
+//   caption: "Suggerimento",
+// )
+
+*Attori coinvolti*
+
+- *Attori Primari*: Utente
+
+*Precondizioni e Postcondizioni*
+
+- *Precondizioni*:
+  - Il sistema è connesso e funzionante.
+  - L'utente ha visualizzato lo step 3.
+  - Il sistema ha caricato lo step corrente correttamente.
+  - L'utente ha cliccato sul pulsante "Suggerimento".
+- *Postcondizioni*:
+  - Il sistema visualizza il suggerimento per rispondere alle domande dello step 3.
+
+*Scenario principale*
+- L'utente visualizza lo step 3.
+- Il sistema mostra le domande dello step 3.
+- L'utente clicca sul pulsante "Suggerimento".
+- Il sistema visualizza il suggerimento per rispondere alle domande dello step 3.
+
+*User story*
+
+- Come utente, voglio visualizzare un suggerimento per rispondere alle domande dello step 3 per completare l'attività.
+
+==== UC04.4.1: Completamento esercizio Select
+
+// #figure(
+//   image(
+//     "/images/uc/selectExercise.png",
+//   width: 35em,
+//   ),
+//   caption: "Completamento esercizio Select",
+// )
+
+*Attori coinvolti*
+
+- *Attori Primari*: Utente
+- *Attori Secondari*: GitHub
+
+*Precondizioni e Postcondizioni*
+
+- *Precondizioni*:
+  - Il sistema è connesso e funzionante.
+  - L'utente ha visualizzato lo step 4.
+  - Le API di GitHub sono disponibili e configurate correttamente.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
+- *Postcondizioni*:
+  - L'utente ha completato l'esercizio Select dello step 4.
+  - Il sistema ha salvato le risposte su GitHub.
+
+*Scenario principale*
+- L'utente visualizza lo step 4.
+- Il sistema mostra l'esercizio Select dello step 4.
+- L'utente completa l'esercizio Select.
+- Il sistema salva le risposte su GitHub.
+
+*Inclusioni*
+- UC4.3.1.1: Visualizzazione suggerimento
+
+*User story*
+
+- Come utente, voglio completare l'esercizio Select dello step 4 per interagire con esso e completare l'attività.
+
+=== UC05: Visualizzazione pagina di chiusura laboratorio @uc5
+
+// #figure(
+//   image(
+//     "/images/uc/step7.png",
+//     width: 35em,
+//   ),
+//   caption: "Pagina di chiusura del laboratorio",
+// )
 
 #figure(
   image(
@@ -756,7 +880,7 @@ nome utente non è rispettoso.
     width: 40em,
   ),
   caption: "UC05: Visualizzazione pagina di chiusura laboratorio",
-)
+) <uc5>
 
 
 *Attori coinvolti*
@@ -770,7 +894,7 @@ nome utente non è rispettoso.
   - Il sistema è connesso e funzionante.
   - L'admin ha caricato lo step 7.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente visualizza lo step 7.
   - L'utente può interagire con esso.
@@ -788,16 +912,16 @@ nome utente non è rispettoso.
 
 == Definizione dei casi d'uso Utente Admin
 
-L'utente Admin è considerabile come una generalizzazione dell'utente target, in quanto ha accesso a tutte le funzionalità della WebApp, ma con privilegi aggiuntivi che gli consentono di gestire il sistema. L'utente Admin, tuttavia, non necessita di passare per la registrazione avendo già le credenziali (in questo caso salvate sul file `.env`). Si considerino quindi solo i seguenti casi d'uso, specifici per l'utente Admin, da sommare ai casi d'uso appena elencati.
+L'utente Admin è considerabile come una generalizzazione dell'utente target, in quanto ha accesso a tutte le funzionalità della WebApp, ma con privilegi aggiuntivi che gli consentono di gestire il sistema. L'utente Admin, tuttavia, non necessita di passare per la registrazione avendo già le credenziali (in questo caso salvate sul file #code-pill(`.env`). Si considerino quindi solo i seguenti casi d'uso, specifici per l'utente Admin, da sommare ai casi d'uso appena elencati.
 
-=== UC06: Login Admin
-#figure(
-  image(
-    "/images/uc/loginFormAdmin.png",
-    width: 35em,
-  ),
-  caption: "Pagina di accesso Admin",
-)
+=== UC06: Login Admin @uc6
+// #figure(
+//   image(
+//     "/images/uc/loginFormAdmin.png",
+//     width: 35em,
+//   ),
+//   caption: "Pagina di accesso Admin",
+// )
 
 #figure(
   image(
@@ -805,7 +929,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
     width: 45em,
   ),
   caption: "Schermata di acesso Admin",
-)
+) <uc6>
 
 *Attori coinvolti*
 
@@ -837,13 +961,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC6.1: Visualizzazione messaggio di errore se le credenziali sono errate
 
-#figure(
-  image(
-    "/images/uc/errPass.png",
-    width: 35em,
-  ),
-  caption: "Errore di accesso",
-)
+// #figure(
+//   image(
+//     "/images/uc/errPass.png",
+//     width: 35em,
+//   ),
+//   caption: "Errore di accesso",
+// )
 
 *Attori coinvolti*
 
@@ -869,15 +993,15 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 - Quando inserisco credenziali errate, il sistema mostra un messaggio di errore così posso correggerle e ripetere l'accesso.
 
-=== UC07: Visualizzazione homepage Admin
+=== UC07: Visualizzazione homepage Admin @uc7
 
-#figure(
-  image(
-    "/images/uc/homeAdmin.png",
-    width: 35em,
-  ),
-  caption: "Visualizzazione homepage Admin",
-)
+// #figure(
+//   image(
+//     "/images/uc/homeAdmin.png",
+//     width: 35em,
+//   ),
+//   caption: "Visualizzazione homepage Admin",
+// )
 
 
 #figure(
@@ -886,7 +1010,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
     width: 49em,
   ),
   caption: "Visualizzazione homepage Admin",
-)
+)<uc7>
 
 *Attori coinvolti*
 
@@ -919,14 +1043,14 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.1: Visualizzazione scheda lista utenti registrati
 
-#figure(
-  image(
-    "/images/uc/tabellaUtenti.png",
-    width: 45em,
-    fit: "cover",
-  ),
-  caption: "Visualizzazione tabella lista utenti registrati",
-)
+// #figure(
+//   image(
+//     "/images/uc/tabellaUtenti.png",
+//     width: 45em,
+//     fit: "cover",
+//   ),
+//   caption: "Visualizzazione tabella lista utenti registrati",
+// )
 
 *Attori coinvolti*
 - *Attori Primari*: Utente Admin
@@ -957,13 +1081,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC7.1.1: Visualizzazione messaggio per lista vuota
 
-#figure(
-  image(
-    "/images/uc/noUser.png",
-    width: 35em,
-  ),
-  caption: "Errore lista utenti",
-)
+// #figure(
+//   image(
+//     "/images/uc/noUser.png",
+//     width: 35em,
+//   ),
+//   caption: "Errore lista utenti",
+// )
 
 *Attori coinvolti*
 
@@ -993,13 +1117,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.2: Visualizzazione tab gestione laboratorio
 
-#figure(
-  image(
-    "/images/uc/graph3.png",
-    width: 41em,
-  ),
-  caption: "vsiualizzazione tab gestione laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/graph3.png",
+//     width: 41em,
+//   ),
+//   caption: "vsiualizzazione tab gestione laboratorio",
+// )
 
 *Attori coinvolti*
 
@@ -1033,13 +1157,13 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 ==== UC07.2.1: Visualizzazione pulsanti della gestione step del laboratorio
 
-#figure(
-  image(
-    "/images/uc/buttons.png",
-    width: 45em,
-  ),
-  caption: "Pulsanti per la gestione degli step del laboratorio",
-)
+// #figure(
+//   image(
+//     "/images/uc/buttons.png",
+//     width: 45em,
+//   ),
+//   caption: "Pulsanti per la gestione degli step del laboratorio",
+// )
 
 *Attori coinvolti*
 
@@ -1056,9 +1180,9 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Postcondizioni*:
   - L'utente Admin visualizza i pulsanti per la gestione degli step del laboratorio.
 
-*Scenario principale*
+*Scenario principale* COMMENTO: i pulsanti sono specificati nelle generalizzazioni, per questo qua non avevo messo _quali_ pulsanti. Devo comunque modificare?
 - L'utente Admin accede alla Tab con le informazioni di laboratorio.
-- Il sistema visualizza i pulsanti per la gestione degli step del laboratorio.
+- Il sistema visualizza i pulsanti per la gestione degli step del laboratorio .
 - L'utente Admin può interagire con i pulsanti per gestire gli step del laboratorio.
 
 *Generalizzazioni*
@@ -1086,7 +1210,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
 - *Postcondizioni*:
   - L'utente Admin visualizza il pulsante per l'avanzamento ad un nuovo step.
 
@@ -1113,8 +1237,8 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
-  - _`currentStep`_ >= 1
+  - Il sistema ha caricato lo step corrente correttamente.
+  - step corrente >= 1
 - *Postcondizioni*:
   - Il pulsante per tornare indietro di uno step è cliccabile.
 
@@ -1142,17 +1266,17 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - L'utente Admin è autenticato.
   - Le API di Firebase sono disponibili e configurate correttamente.
   - Le API di GitHub sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
   - L'utente Admin ha cliccato sul pulsante per l'azzeramento delle statistiche.
 - *Postcondizioni*:
-  - Il pulsante per l'azzeramento delle statistiche resetta _`users.json`_ e _`chartAnswer.json`_ (maggiori informazioni su questi due file e il loro scopo sono elencate al #link(<json>)[#text(fill: blue, "prossimo capitolo")]).
+  - Il pulsante per l'azzeramento delle statistiche resetta gli utenti salvati e il conteggio delle domande.
 
 *Scenario Principale*
 
 - L'utente Admin accede alla Tab con le informazioni di laboratorio.
 - Il sistema visualizza il pulsante per l'azzeramento delle statistiche.
 - L'utente Admin può interagire con il pulsante per azzerare le statistiche.
-- _`users.json`_ e _`chartAnswer.json`_ vengono resettati.
+- gli utenti salvati e il conteggio delle domande vengono resettati.
 
 *User Story*
 
@@ -1172,30 +1296,30 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
   - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato _`currentStep`_ correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
   - L'utente Admin ha cliccato sul pulsante per il reset degli step.
 - *Postcondizioni*:
-  - Il pulsante per il reset degli step resetta _`currentStep`_ a 0.
+  - Il pulsante per il reset degli step resetta step corrente a 0.
 
 *Scenario principale*
 
 - L'utente Admin accede alla Tab con le informazioni di laboratorio.
 - Il sistema visualizza il pulsante per il reset degli step.
 - L'utente Admin può interagire con il pulsante per resettare gli step in maniera rapida.
-- _`currentStep`_ viene resettato a 0.
+- step corrente viene resettato a 0.
 
 *User Story*
 - Come utente Admin, voglio visualizzare il pulsante per il reset degli step per poter resettare gli step del laboratorio in modo rapido senza dover accedere al servizio di _information storage_ dove è contenuto il file _`step.json`_.
 
 ==== UC07.2.2: Visualizzazione Tab Grafici Step 3
 
-#figure(
-  image(
-    "/images/uc/graph3close.png",
-    width: 40em,
-  ),
-  caption: "Grafici Step3",
-)
+// #figure(
+//   image(
+//     "/images/uc/graph3close.png",
+//     width: 40em,
+//   ),
+//   caption: "Grafici Step3",
+// )
 
 *Attori coinvolti*
 
@@ -1208,7 +1332,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
   - Le API di GitHub sono disponibili e configurate correttamente.
-  - Il sistema ha caricato i dati di _`chartAnswer.json`_ correttamente.
+  - Il sistema ha caricato correttamente i dati delle domande salvate.
 - *Postcondizioni*:
   - L'utente Admin visualizza la Tab con i grafici delle risposte date dagli utenti nello step 3.
 
@@ -1219,22 +1343,22 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 *Estensioni*
 
-- UC7.2.2.1: Visualizzazione messaggio di informazione se il file _`chartAnswer.json`_ è vuoto o avviene un errore generico.
+- UC7.2.2.1: Visualizzazione messaggio di informazione se non ci sono risposte salvate o avviene un errore generico.
 
 *User Story*
 
 - Come utente Admin, voglio visualizzare la Tab con i grafici delle risposte date dagli utenti nello step 3 per analizzare le risposte degli utenti e migliorare l'esperienza del laboratorio.
 
 
-==== UC7.2.2.1: Visualizzazione messaggio di informazione se il file _`chartAnswer.json`_ è vuoto o avviene un errore generico
+==== UC7.2.2.1: Visualizzazione messaggio di informazione se non ci sono risposte salvate o avviene un errore generico
 
-#figure(
-  image(
-    "/images/uc/chartAnsErr.png",
-    width: 40em,
-  ),
-  caption: "Errore durante il caricamento dei dati",
-)
+// #figure(
+//   image(
+//     "/images/uc/chartAnsErr.png",
+//     width: 40em,
+//   ),
+//   caption: "Errore durante il caricamento dei dati",
+// )
 
 *Attori coinvolti*
 
@@ -1245,31 +1369,30 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Precondizioni*:
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
-  - Il file _`chartAnswer.json`_ è vuoto o si
+  - non ci sono risposte salvate o si verifica un errore durante il caricamento dei dati.
   - Le API di GitHub sono disponibili e configurate correttamente.verifica un errore durante il caricamento dei dati.
 - *Postcondizioni*:
-  - Il sistema visualizza un messaggio di informazione che indica che il file _`chartAnswer.json`_ è vuoto.
+  - Il sistema visualizza un messaggio di informazione che indica che non ci sono risposte salvate.
 
 *Scenario principale*
 
 - L'utente Admin accede alla Tab con i grafici delle risposte date dagli utenti nello step 3.
-- Il sistema tenta di caricare i dati dal file _`chartAnswer.json`_.
-- Il file _`chartAnswer.json`_ è vuoto o si verifica un errore durante il caricamento dei dati.
-- Il sistema visualizza un messaggio di informazione che indica che il file _`chartAnswer.json`_ è vuoto.
+- Il sistema tenta di caricare i dati dnon ci sono risposte salvateci sono risposte salvate o si verifica un errore durante il caricamento dei dati.
+- Il sistema visualizza un messaggio di informazione che indica che non ci sono risposte salvate.
 
 *User Story*
 
-- Quando il file _`chartAnswer.json`_ è vuoto o si verifica un errore durante il caricamento dei dati, il sistema mostra un messaggio di informazione per informare l'utente Admin che non ci sono dati disponibili per lo step 3.
+- Quando non ci sono risposte salvate o si verifica un errore durante il caricamento dei dati, il sistema mostra un messaggio di informazione per informare l'utente Admin che non ci sono dati disponibili per lo step 3.
 
 ==== UC07.2.3: Visualizzazione Tab Grafici Step 4
 
-#figure(
-  image(
-    "/images/uc/graph4.png",
-    width: 40em,
-  ),
-  caption: "Grafici Step4",
-)
+// #figure(
+//   image(
+//     "/images/uc/graph4.png",
+//     width: 40em,
+//   ),
+//   caption: "Grafici Step4",
+// )
 
 *Attori coinvolti*
 
@@ -1282,7 +1405,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
   - Il sistema è connesso e funzionante.
   - L'utente Admin è autenticato.
   - Le API di GitHub sono disponibili e configurate correttamente.
-  - Il sistema ha caricato i dati di _`chartAnswer.json`_ correttamente.
+  - Il sistema ha caricato correttamente i dati delle domande salvate.
 - *Postcondizioni*:
   - L'utente Admin visualizza la Tab con i grafici delle risposte date dagli utenti nello step 4.
 
@@ -1294,7 +1417,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 
 *Estensioni*
 
-- UC7.2.2.1: Visualizzazione messaggio di informazione se il file _`chartAnswer.json`_ è vuoto o avviene un errore generico.
+- UC7.2.2.1: Visualizzazione messaggio di informazione se non ci sono risposte salvate o avviene un errore generico.
 
 *User Story*
 
@@ -1468,18 +1591,3 @@ I requisiti di questo progetto sono divisi in:
   ),
 )
 
-== Copertura dei requisiti
-
-Alla fine dello sviluppo del progetto, è stato effettuato un controllo della copertura dei requisiti, per verificare che tutti i requisiti definiti fossero stati implementati correttamente. La copertura dei requisiti è stata calcolata come rapporto tra il numero di requisiti implementati e il numero totale di requisiti definiti.
-
-Considerando NR il numero totale di requisiti definiti e NI il numero di requisiti implementati, la copertura dei requisiti è stata calcolata come segue:
-
-$
-  "Copertura Requisiti" = ("NR" / "NI" ) * 100
-$
-
-Dove:
-- NR = 9, obiettivi richiesti, come dal capitolo #link(<objectives>)[#text(fill: blue, "Obiettivi del progetto")]).
-- NI = 9, obiettivi effettivamente implementati.
-
-È stata raggiunta una copertura dei requisiti del 100%, in quanto tutti i requisiti definiti sono stati implementati correttamente. Questo garantisce che il sistema soddisfi le aspettative minime e le esigenze degli utenti, come definito nei casi d'uso e nelle user story, oltre che ad avere tutti gli 'extra' menzionati in questo capitolo.
