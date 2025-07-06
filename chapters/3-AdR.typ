@@ -11,8 +11,8 @@
 
   it
 }
-#set math.equation(numbering: num => "(" + (str(counter(heading).get().at(0)) + "." + str(num)) + ")")
-// #set figure(numbering: num => str(counter(heading).get().at(0)) + "." + str(num))
+
+#set figure(numbering: num => str(counter(heading).get().at(0)) + "." + str(num))
 
 #let glossary(word) = {
   let t = gls(word) + sub("G")
@@ -101,7 +101,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
   image(
     "/images/uc/UML/UC01.drawio.png",
     fit: "contain",
-    width: 49em,
+    width: 45em,
   ),
   caption: "UC01: diagramma UML",
 )<uc1>
@@ -264,7 +264,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 #figure(
   image(
     "/images/uc/UML/UC02.drawio.png",
-    width: 47em,
+    width: 43em,
     fit: "contain",
   ),
   caption: "UC02: Visualizzazione UI",
@@ -347,7 +347,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 #figure(
   image(
     "/images/uc/UML/UC03.drawio.png",
-    width: 47em,
+    width: 40em,
   ),
   caption: "UC03: Visualizzazione pagina iniziale laboratorio",
 )<uc3>
@@ -428,7 +428,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 #figure(
   image(
     "/images/uc/UML/UC04.drawio.png",
-    width: 45em,
+    width: 40em,
   ),
   caption: "UC04: Visualizzazione step progressivi",
 ) <uc4>
@@ -503,7 +503,9 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 - L'utente attende che l'admin carichi lo step 1.
 - Il sistema visualizza lo step 1.
-- L'utente può interagire con esso.
+- #box(
+    fill: yellow,
+  )[L'utente può interagire con esso e completare l'esercizio sul produttore con le istruzioni mancanti.]
 
 *Inclusioni*
 
@@ -511,7 +513,9 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività.
+- #box(
+    fill: yellow,
+  )[Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Produttore con le istruzioni mancanti.]
 
 ==== UC4.1.1: Drag and Drop
 
@@ -544,7 +548,6 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 *User story*
 
 - Come utente, voglio poter trascinare e rilasciare gli elementi.
-  COMMENTO: questo UC è lasciato generico di proposito, in quanto è un'inclusione su altri UC, quindi non sarebbe corretto renderlo più specifico. È d'accordo?
 
 
 ==== UC4.2: Visualizzazione Step 2
@@ -579,7 +582,9 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 - L'utente attende che l'admin carichi lo step 2.
 - Il sistema visualizza lo step 2.
-- L'utente può interagire con esso.
+- #box(
+    fill: yellow,
+  )[L'utente può interagire con esso e completare l'esercizio sul consumatore con le istruzioni mancanti.]
 
 *Inclusioni*
 
@@ -587,7 +592,9 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 2 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività..
+- #box(
+    fill: yellow,
+  )[Come utente, voglio visualizzare lo step 2 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Consumatore con le istruzioni mancanti.]
 
 
 ==== UC4.3: Visualizzazione Step 3
@@ -628,7 +635,81 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User Story*
 
-- Come utente, voglio visualizzare lo step 1 del laboratorio per rispondere alle le domande completando l'attività.
+- Come utente, voglio visualizzare lo step 3 del laboratorio per rispondere alle le domande completando l'attività.
+
+==== UC4.3.1: Risposta domande
+
+// #figure(
+//   image(
+//     "/images/uc/answerQuestions.png",
+//     width: 35em,
+//   ),
+//   caption: "Risposta domande",
+// )
+
+*Attori coinvolti*
+
+- *Attori Primari*: Utente
+- *Attori Secondari*: GitHub
+
+*Precondizioni e Postcondizioni*
+
+- *Precondizioni*:
+  - Il sistema è connesso e funzionante.
+  - L'utente ha visualizzato lo step 3.
+  - Le API di GitHub sono disponibili e configurate correttamente.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
+- *Postcondizioni*:
+  - L'utente ha risposto alle domande dello step 3.
+  - Il sistema ha salvato le risposte su GitHub.
+
+*Scenario principale*
+- L'utente visualizza lo step 3.
+- Il sistema mostra le domande dello step 3.
+- L'utente risponde alle domande.
+- Il sistema salva le risposte su GitHub.
+
+*Inclusioni*
+
+- UC4.3.1.1: Visualizzazione suggerimento
+
+*User story*
+- Come utente, voglio rispondere alle domande di teoria riguardanti il problema del lettore-scrittore per completare l'attività.
+
+==== UC04.3.1.1: Visualizzazione suggerimento
+
+// #figure(
+//   image(
+//     "/images/uc/suggestion.png",
+//     width: 35em,
+//   ),
+//   caption: "Suggerimento",
+// )
+
+*Attori coinvolti*
+
+- *Attori Primari*: Utente
+
+*Precondizioni e Postcondizioni*
+
+- *Precondizioni*:
+  - Il sistema è connesso e funzionante.
+  - L'utente ha visualizzato lo step 3.
+  - Il sistema ha caricato lo step corrente correttamente.
+  - L'utente ha cliccato sul pulsante "Suggerimento".
+- *Postcondizioni*:
+  - Il sistema visualizza il suggerimento per rispondere alle domande dello step 3.
+
+*Scenario principale*
+- L'utente visualizza lo step 3.
+- Il sistema mostra le domande dello step 3.
+- L'utente clicca sul pulsante "Suggerimento".
+- Il sistema visualizza il suggerimento per rispondere alle domande dello step 3.
+
+*User story*
+
+- Come utente, voglio visualizzare un suggerimento sulla domanda a cui sto rispondendo per completare l'attività.
 
 ==== UC4.4: Visualizzazione Step 4
 
@@ -639,7 +720,6 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 //   ),
 //   caption: "Step 4 del laboratorio",
 // )
-
 
 *Attori coinvolti*
 
@@ -661,14 +741,57 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 - L'utente attende che l'admin carichi lo step 4.
 - Il sistema visualizza lo step 4.
-- L'utente può interagire con esso.
+- L'utente può interagire con esso e completare l'esercizio di teoria con i menù a tendina sul problema del lettore-scrittore.
 
 *Inclusioni*
-- UC4.4.1: Completamento esercizio Select
+- UC4.4.1: Completamento esercizio dei lettori-scrittori con i menù a tendina.
 
 *User Story*
 
-- Come utente, voglio visualizzare lo step 4 del laboratorio per completare l'esercizio Select e interagire con esso completando l'attività.
+- Come utente voglio visualizzare lo step 4 del laboratorio per completare #box(fill: yellow)[l'esercizio sul problema dei lettori-scrittori con i menù a tendina] e interagire con esso completando l'attività.
+
+COMMENTO: lo spazio tra le parole è dato dall'evidenziatura in giallo, tolta quella la formattazione torna normale.
+
+==== UC04.4.1: Completamento esercizio con menù a tendina
+
+// #figure(
+//   image(
+//     "/images/uc/selectExercise.png",
+//   width: 35em,
+//   ),
+//   caption: "Completamento esercizio Select",
+// )
+
+*Attori coinvolti*
+
+- *Attori Primari*: Utente
+- *Attori Secondari*: GitHub
+
+*Precondizioni e Postcondizioni*
+
+- *Precondizioni*:
+  - Il sistema è connesso e funzionante.
+  - L'utente ha visualizzato lo step 4.
+  - Le API di GitHub sono disponibili e configurate correttamente.
+  - Le API di Firebase sono disponibili e configurate correttamente.
+  - Il sistema ha caricato lo step corrente correttamente.
+- *Postcondizioni*:
+  - L'utente ha completato l'esercizio Select dello step 4.
+  - Il sistema ha salvato le risposte su GitHub.
+
+*Scenario principale*
+- L'utente visualizza lo step 4.
+- Il sistema mostra l'esercizio Select dello step 4.
+- L'utente completa l'esercizio Select.
+- Il sistema salva le risposte su GitHub.
+
+*Inclusioni*
+- UC4.3.1.1: Visualizzazione suggerimento
+
+*User story*
+
+- Come utente, voglio poter interagire con i menù a tendina e completare l'attività sul problema dei lettori-scrittori.
+
 
 ==== UC4.5: Visualizzazione Step 5
 
@@ -708,7 +831,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 5 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività.
+- #box(fill: yellow)[Come utente, voglio visualizzare lo step 5 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Lettore con le istruzioni mancanti].
 
 ==== UC4.6: Visualizzazione Step 6
 
@@ -749,121 +872,11 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User story*
 
-- Come utente, voglio visualizzare lo step 6 del laboratorio per interagire con il Drag and Drop e risolvere il problema proposto interagendo con esso e completando l'attività.
+- #box(
+    fill: yellow,
+  )[Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sullo Scrittore con le istruzioni mancanti.]
 
-==== UC4.3.1: Risposta domande
 
-// #figure(
-//   image(
-//     "/images/uc/answerQuestions.png",
-//     width: 35em,
-//   ),
-//   caption: "Risposta domande",
-// )
-
-*Attori coinvolti*
-
-- *Attori Primari*: Utente
-- *Attori Secondari*: GitHub
-
-*Precondizioni e Postcondizioni*
-
-- *Precondizioni*:
-  - Il sistema è connesso e funzionante.
-  - L'utente ha visualizzato lo step 3.
-  - Le API di GitHub sono disponibili e configurate correttamente.
-  - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato lo step corrente correttamente.
-- *Postcondizioni*:
-  - L'utente ha risposto alle domande dello step 3.
-  - Il sistema ha salvato le risposte su GitHub.
-
-*Scenario principale*
-- L'utente visualizza lo step 3.
-- Il sistema mostra le domande dello step 3.
-- L'utente risponde alle domande.
-- Il sistema salva le risposte su GitHub.
-
-*Inclusioni*
-
-- UC4.3.1.1: Visualizzazione suggerimento
-
-*User story*
-- Come utente, voglio rispondere alle domande dello step 3 per completare l'attività.
-
-==== UC04.3.1.1: Visualizzazione suggerimento
-
-// #figure(
-//   image(
-//     "/images/uc/suggestion.png",
-//     width: 35em,
-//   ),
-//   caption: "Suggerimento",
-// )
-
-*Attori coinvolti*
-
-- *Attori Primari*: Utente
-
-*Precondizioni e Postcondizioni*
-
-- *Precondizioni*:
-  - Il sistema è connesso e funzionante.
-  - L'utente ha visualizzato lo step 3.
-  - Il sistema ha caricato lo step corrente correttamente.
-  - L'utente ha cliccato sul pulsante "Suggerimento".
-- *Postcondizioni*:
-  - Il sistema visualizza il suggerimento per rispondere alle domande dello step 3.
-
-*Scenario principale*
-- L'utente visualizza lo step 3.
-- Il sistema mostra le domande dello step 3.
-- L'utente clicca sul pulsante "Suggerimento".
-- Il sistema visualizza il suggerimento per rispondere alle domande dello step 3.
-
-*User story*
-
-- Come utente, voglio visualizzare un suggerimento per rispondere alle domande dello step 3 per completare l'attività.
-
-==== UC04.4.1: Completamento esercizio Select
-
-// #figure(
-//   image(
-//     "/images/uc/selectExercise.png",
-//   width: 35em,
-//   ),
-//   caption: "Completamento esercizio Select",
-// )
-
-*Attori coinvolti*
-
-- *Attori Primari*: Utente
-- *Attori Secondari*: GitHub
-
-*Precondizioni e Postcondizioni*
-
-- *Precondizioni*:
-  - Il sistema è connesso e funzionante.
-  - L'utente ha visualizzato lo step 4.
-  - Le API di GitHub sono disponibili e configurate correttamente.
-  - Le API di Firebase sono disponibili e configurate correttamente.
-  - Il sistema ha caricato lo step corrente correttamente.
-- *Postcondizioni*:
-  - L'utente ha completato l'esercizio Select dello step 4.
-  - Il sistema ha salvato le risposte su GitHub.
-
-*Scenario principale*
-- L'utente visualizza lo step 4.
-- Il sistema mostra l'esercizio Select dello step 4.
-- L'utente completa l'esercizio Select.
-- Il sistema salva le risposte su GitHub.
-
-*Inclusioni*
-- UC4.3.1.1: Visualizzazione suggerimento
-
-*User story*
-
-- Come utente, voglio completare l'esercizio Select dello step 4 per interagire con esso e completare l'attività.
 
 === UC05: Visualizzazione pagina di chiusura laboratorio @uc5
 
@@ -927,7 +940,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 #figure(
   image(
     "/images/uc/UML/UC06.drawio.png",
-    width: 45em,
+    width: 40em,
   ),
   caption: "Schermata di acesso Admin",
 ) <uc6>
@@ -1008,7 +1021,7 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 #figure(
   image(
     "/images/uc/UML/UC07.drawio.png",
-    width: 49em,
+    width: 40em,
   ),
   caption: "Visualizzazione homepage Admin",
 )<uc7>
@@ -1181,7 +1194,8 @@ L'utente Admin è considerabile come una generalizzazione dell'utente target, in
 - *Postcondizioni*:
   - L'utente Admin visualizza i pulsanti per la gestione degli step del laboratorio.
 
-*Scenario principale* COMMENTO: i pulsanti sono specificati nelle generalizzazioni, per questo qua non avevo messo _quali_ pulsanti. Devo comunque modificare?
+*Scenario principale*
+
 - L'utente Admin accede alla Tab con le informazioni di laboratorio.
 - Il sistema visualizza i pulsanti per la gestione degli step del laboratorio .
 - L'utente Admin può interagire con i pulsanti per gestire gli step del laboratorio.

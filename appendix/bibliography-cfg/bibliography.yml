@@ -1,7 +1,6 @@
 manifesto_agile:
   type: web
   title: Manifesto tetet Agile Software Development
-  author: ["Robert C. Martin", "Kent Beck", "Martin Fowler", "altri"]
   url: http://agilemanifesto.org/
 
 nextjs-docs:
@@ -58,3 +57,8 @@ typescript:
   type: web
   title: TypeScript Documentation
   url: https://www.typescriptlang.org/docs/
+
+nvda:
+  type: web
+  title: NVDA Documentation
+  url: https://www.nvda.it/node/242

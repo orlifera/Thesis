@@ -35,8 +35,10 @@
       [],
     )
   }
+
+
   show ref: it => {
-    text(size: 1.2em, sub("[" + it + "]"))
+    text(size: 1em, "(" + it + ")")
   }
 
   show figure: set block(breakable: true)

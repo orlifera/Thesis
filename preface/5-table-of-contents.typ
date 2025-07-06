@@ -30,7 +30,7 @@
 )
 
 #outline(
-  title: "Lista codice",
+  title: "Elenco del codice",
   target: figure.where(kind: raw),
   indent: auto,
 )

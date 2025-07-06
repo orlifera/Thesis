@@ -13,7 +13,6 @@
   it
 }
 
-#set math.equation(numbering: num => "(" + (str(counter(heading).get().at(0)) + "." + str(num)) + ")")
 #set figure(numbering: num => str(counter(heading).get().at(0)) + "." + str(num))
 
 #let glossary(word) = {
@@ -48,7 +47,7 @@ Queste scelte sono state fatte tenendo conto del concetto di riuso, ovvero quell
 
 == Tecnologie: scelte e implementazione
 
-Data la natura tecnica del progetto, i sui scopi (si veda il #link(<stage-purpose>)[#text(fill: blue, "capitolo secondo")]), e tutte le motivazioni elencate sopra, la scelta più ovvia per le tecnologie da utilizzare era quella di optare per i #glossary("Framework"). Questi rendono il processo di sviluppo più veloce e semplice, fornendo una struttura di base su cui costruire l'applicazione. Inoltre, i framework offrono anche funzionalità predefinite e convenzioni da seguire, che semplificano ulteriormente lo sviluppo. I framework, a livello architetturale e di sviluppo sono considerati:
+Data la natura tecnica del progetto, i suoi scopi (si veda il #link(<stage-purpose>)[#text(fill: blue, "capitolo secondo")]), e tutte le motivazioni elencate sopra, la scelta più ovvia per le tecnologie da utilizzare era quella di optare per i #glossary("Framework"). Questi rendono il processo di sviluppo più veloce e semplice, fornendo una struttura di base su cui costruire l'applicazione. Inoltre, i framework offrono anche funzionalità predefinite e convenzioni da seguire, che semplificano ulteriormente lo sviluppo. I framework, a livello architetturale e di sviluppo sono considerati:
 - #glossary("Bottom-up"): perché partono da una base di codice già esistente e lo estendono, piuttosto che partire da zero.
 - #glossary("Top-down"): perché forniscono una struttura architetturale di base su cui costruire l'applicazione, piuttosto che partire da zero e costruire tutto da capo.
 
@@ -57,7 +56,7 @@ Queste tecnologie sono state scelte tenendo conto di conoscenze pregresse acquis
 
 === Typescript
 
-Typescript#sub[@typescript] @ts è alla base del progetto. È il linguaggio di programmazione utilizzato per tutto il progetto in ogni sua parte. Questo linguaggio è un _superset_ (estensione) di JavaScript che aggiunge una forte tipizzazione statica che permette di evitare errori di tipo durante lo sviluppo, migliorando la qualità del codice e la sua manutenibilità. Inoltre, Typescript offre funzionalità avanzate come le interfacce, le classi e i moduli, che semplificano la scrittura di codice complesso e facilitano il riuso. Il fatto che sia un _superset_ di JavaScript permette di utilizzare tutte le librerie e i framework basati su JavaScript, rendendolo estremamente versatile e compatibile con il vasto ecosistema di librerie e strumenti disponibili per lo sviluppo web.
+Typescript#sub[@typescript] è alla base del progetto @ts. È il linguaggio di programmazione utilizzato per tutto il progetto in ogni sua parte. Questo linguaggio è un _superset_ (estensione) di JavaScript che aggiunge una forte tipizzazione statica che permette di evitare errori di tipo durante lo sviluppo, migliorando la qualità del codice e la sua manutenibilità. Inoltre, Typescript offre funzionalità avanzate come le interfacce, le classi e i moduli, che semplificano la scrittura di codice complesso e facilitano il riuso. Il fatto che sia un _superset_ di JavaScript permette di utilizzare tutte le librerie e i framework basati su JavaScript, rendendolo estremamente versatile e compatibile con il vasto ecosistema di librerie e strumenti disponibili per lo sviluppo web.
 
 #figure(caption: "Logo di typescript", image(
   "/images/loghi/ts.png",
@@ -114,7 +113,7 @@ Per fare le richieste su una specifica _Repo_ di _GitHub_ però, è necessario c
   caption: "Esempio di file `.env`",
 ) <env>
 
-Per un miglior mantenimento del codice, prima di ogni chiamata di funzione, viene controllato se il token è creato con questa _flag_ @flag:
+Per un miglior mantenimento del codice, prima di ogni chiamata di funzione, viene controllato se il token è creato con questa _flag_ come mostrato in @flag.
 
 #figure(caption: "Controllo del token GitHub", image(
   "../images/code/env.png",
@@ -175,7 +174,7 @@ Firebase#sub[@firebase] @fb è un servizio di Google che fornisce un #glossary("
   caption: "Logo di Firebase",
 )<fb>
 
-Nel caso di Thinky, Firebase è stato utilizzato per sopperire alle mancanze di GitHub, che non permetteva di avere un aggiornamento live dei dati. Questo è dovuto al fatto che GitHub è un servizio di versionamento del codice, e non un database in tempo reale, e inoltre la funzione #code-pill("fetchStep") è contenuta in un #glossary("server-side component") di NextJS e che quindi veniva eseguito solo una volta al caricamento della pagina. Inoltre, GitHub ha un ritardo sulle richieste dovuto al CDN Caching.
+Nel caso di Thinky, Firebase è stato utilizzato per sopperire alle mancanze di GitHub, che non permetteva di avere un aggiornamento live dei dati. Questo è dovuto al fatto che GitHub è un servizio di versionamento del codice, e non un database in tempo reale, e inoltre la funzione #code-pill("fetchStep") è contenuta in un #glossary("server-side component") di NextJS e che quindi viene eseguito solo una volta al caricamento della pagina. Inoltre, GitHub ha un ritardo sulle richieste dovuto al CDN Caching.
 
 Per creare un database con Firebase, tutto quello che serve è creare un progetto sul sito ufficiale di Firebase e configurare il file #code-pill("firebase.ts") @fbts con le credenziali del progetto. Il file #code-pill("firebase.ts") contiene le informazioni necessarie per connettersi al database Firebase e per utilizzare i servizi offerti da Firebase, come l'autenticazione e il database in tempo reale.
 
@@ -187,7 +186,7 @@ Per creare un database con Firebase, tutto quello che serve è creare un progett
 
 Questo file viene automaticamente generato da Firebase quando si crea il nuovo progetto. Per aggiornare i dati in tempo reale, viene utilizzato il database Firestore di Firebase, che permette di avere un database NoSQL in tempo reale, con la possibilità di effettuare query e aggiornamenti in modo semplice e veloce.
 
-Per vedere _live_ i dati aggiornati, viene utilizzato il metodo #code-pill("onSnapshot()") di Firestore, che permette di ascoltare le modifiche ai dati in tempo reale e di aggiornare l'interfaccia utente di conseguenza. Questo metodo è molto utile per Thinky, perché azzera il _delay_ che GitHub aveva nell'aggiornare lo step, garantendo così la stessa esperienza fluida e divertente ad ogni studente.
+Per vedere _live_ i dati aggiornati, viene utilizzato il metodo #code-pill("onSnapshot()") di Firestore, che permette di ascoltare le modifiche ai dati in tempo reale e di aggiornare l'interfaccia utente di conseguenza. Questo metodo è molto utile per Thinky, perché azzera il _delay_ che i test eseguiti con GitHub hanno mostrato nell'aggiornamento dello step, garantendo così la stessa esperienza fluida e divertente ad ogni studente.
 
 #figure(caption: "Utilizzo di `onSnapshot()` per aggiornare i dati in tempo reale", sourcecode(
   ```ts
@@ -223,9 +222,7 @@ I dati reperiti dalle API di GitHub sono stati:
 
 Tutte le informazioni sono state salvate in file JSON all'interno di una repository di GitHub separata da quella del codice sorgente, che sono stati poi letti e scritti tramite le API di GitHub.
 
-IN particolare, per reperire le immagini degli avatar, è stata creata una funzione che prendeva come parametro il nome utente scelto durante la registrazione e lo inseriva all'interno dell'URL della cartella contenente le immagini degli avatar, in modo che prendesse quella corrispondente al nome utente scelto. Le immagini degli avatar sono state salvate in una cartella chiamata `avatars` all'interno della repository di GitHub.
-
-COMMENTO: Non so se menzionare qua la differenziazione del nome utente (generato random o scelto dall'utente) e come questo influisce sulla scelta dell'avatar. Qua si parla di GitHub, forse ha più senso metterlo in una sezione separata, lei che dice?
+In particolare, per reperire le immagini degli avatar, è stata creata una funzione che prende come parametro il nome utente scelto durante la registrazione e lo inserisce all'interno dell'URL della cartella contenente le immagini degli avatar, in modo che prenda quella corrispondente al nome utente scelto. Le immagini degli avatar sono state salvate in una cartella chiamata `avatars` all'interno della repository di GitHub.
 
 Per le risposte degli utenti, invece, è stato creato un file JSON chiamato `chartAnswer.json` che contiene il numero di risposte per ogni domanda. Questo file viene aggiornato ogni volta che l'utende admin avanza di step, in modo da tenere traccia delle risposte degli utenti in tempo reale.
 
@@ -303,7 +300,7 @@ In questo caso, #code-pill("{children}") indica tutto ciò che viene passato com
 <next>
 NextJS#sub[@nextjs-docs] @nx è un framework di React utilizzato per lo sviluppo _fullstack_ di applicazioni web moderne e performanti. Questo framework offre di default molte funzionalità avanzate, utili per migliorare le performance del prodotto. Ad esempio il Server Side Rendering (SSR) delle componenti, che permette di renderizzare una pagina sul server prima di inviarla al client, migliorando le prestazioni e diminuendo il codice che il client deve interpretare, auemntando la velocità di caricamento della pagina stessa. Inoltre, NextJS offre anche la generazione statica delle pagine, che permette di creare pagine statiche a partire dai dati dinamici, migliorando ulteriormente le prestazioni e l'ottimizzazione SEO.
 
-NextJS utilizza una struttura a file e cartelle per organizzare le pagine e i componenti dell'applicazione, rendendo facile la navigazione e la gestione del progetto. Mette anche a disposizione dei file di _default_ da utilizzare in diverse occorrenze.
+NextJS utilizza una struttura a file e cartelle per organizzare le pagine e i componenti dell'applicazione, che rende facile la navigazione e la gestione del progetto. Mette anche a disposizione dei file di _default_ da utilizzare in diverse occorrenze.
 
 #figure(
   image(
@@ -315,7 +312,7 @@ NextJS utilizza una struttura a file e cartelle per organizzare le pagine e i co
 )<nx>
 
 ==== Layout.tsx
-Il file #code-pill("layout.tsx")@lay è il più importnate di tutti, è l'unico file che non può mancare in un progetto (non a caso, Next lo crea automaticamente se viene cancellato). Deve essercene almeno uno, ed è il file che da la struttura principale a tutte le pagine dell'applicazione. Funge da _#glossary("blueprint")_ per tutte le pagine, permettendo di definire la loro struttura. Tutto ciò che viene incluso in un file #code-pill("layout.tsx") sarà riportato in ogni pagina che fa riferimento a quel file (possono esistere più file #code-pill("layout.tsx") in un progetto, ma ogni pagina può fare riferimento solo ad uno di essi, in base alla folder structure e alla posizione di suddetta pagina). Questo file è quindi fondamentale per garantire una struttura coerente e uniforme in tutta l'applicazione, e permette di definire le parti comuni a tutte le pagine, come il menu di navigazione, il footer e altre componenti condivise.
+Il file #code-pill("layout.tsx")@lay è il più importnate di tutti, è l'unico file che non può mancare in un progetto (non a caso, Next lo crea automaticamente se viene cancellato). Deve essercene almeno uno, ed è il file che dà la struttura principale a tutte le pagine dell'applicazione. Funge da _#glossary("blueprint")_ per tutte le pagine, permettendo di definire la loro struttura. Tutto ciò che viene incluso in un file #code-pill("layout.tsx") sarà riportato in ogni pagina che fa riferimento a quel file (possono esistere più file #code-pill("layout.tsx") in un progetto, ma ogni pagina può fare riferimento solo ad uno di essi, in base alla folder structure e alla posizione di suddetta pagina). Questo file è quindi fondamentale per garantire una struttura coerente e uniforme in tutta l'applicazione, e permette di definire le parti comuni a tutte le pagine, come il menu di navigazione, il footer e altre componenti condivise.
 Come mostrato prima infatti, il #code-pill("ThemeProvider") viene inserito all'interno del file #code-pill("layout.tsx") principale, in modo da applicare il tema scelto dall'utente a tutte le pagine dell'applicazione.
 
 Nel caso di Thinky sono stati creati tre file #code-pill("layout.tsx"):
@@ -324,7 +321,6 @@ Nel caso di Thinky sono stati creati tre file #code-pill("layout.tsx"):
 - Il file #code-pill("layout.tsx") per la pagina di laboratorio.
 - Il file #code-pill("layout.tsx") per le altre pagine.
 
-COMMENTO: Come gli avatar, riguardo all'approfondimento di layout. metto qua o in una sezione a parte?
 
 Questi verranno approfonditi nella #link(<layout>, text(fill: blue)[sezione apposita]).
 
@@ -377,7 +373,10 @@ I _client components_#sub[@csc] invece, differiscono dai primi in quanto vengono
 
 === TailwindCSS
 
-TailwindCSS#sub[@tailwind] @tw è un framework CSS #glossary("utility-first") che permette di creare interfacce utente moderne e personalizzabili in modo semplice e veloce. È stato scelto per il progetto Thinky per la sua facilità d'uso, che permette allo sviluppatore di non preoccuparsi della specificità delle regole CSS in quanto le classi di Tailwind sono già create, ed esposte nella documentazione, e vengono inserite direttamente nel _markup_ HTML o TSX.
+TailwindCSS#sub[@tailwind] @tw è un framework CSS #glossary("utility-first") che permette di creare interfacce utente moderne e personalizzabili in modo semplice e veloce. #box(fill: yellow)[Funziona attraverso l'utilizzo di classi CSS predefinite, che possono essere combinate per creare stili complessi senza dover scrivere codice CSS personalizzato. Questo approccio consente di risparmiare tempo e di evitare la scrittura di codice CSS complesso, rendendo lo sviluppo dell'interfaccia utente più rapido e intuitivo. Dopo l'installazione di Tailwind, si importa il file #code-pill("globals.css"), che contiene le classi CSS predefinite di Tailwind, e si possono iniziare ad utilizzare le classi CSS direttamente nei file #code-pill("page.tsx") .]
+
+
+È stato scelto per il progetto Thinky per la sua facilità d'uso, che permette allo sviluppatore di non preoccuparsi della specificità delle regole CSS in quanto le classi di Tailwind sono già create, ed esposte nella documentazione, e vengono inserite direttamente nel _markup_ HTML o TSX.
 
 #figure(
   image(
@@ -388,7 +387,7 @@ TailwindCSS#sub[@tailwind] @tw è un framework CSS #glossary("utility-first") ch
   caption: "Logo di TailwindCSS",
 )<tw>
 
-Creare stili con Tailwind è molto semolice:
+Creare stili con Tailwind è molto semplice:
 quando si vuole applicare lo stile ad un elemento, basta aggiungere la classe desiderata al tag stesso dell'elemento, poi il compilatore di Tailwind si occuperà di generare il CSS necessario per applicare lo stile desiderato. Questo approccio permette di creare interfacce utente in modo rapido e intuitivo, senza dover scrivere codice CSS complesso@html.
 
 #figure(
@@ -432,6 +431,10 @@ Mentre con TailwindCSS @tail, si avrebbe:
 
 Questo approccio, oltre che ad essere più conciso, permette di applicare lo stile direttamente all'elemento, senza preoccupazioni di sovrascritture da parte di stili applicati ad altri elementi prima di questo.
 
+#box(
+  fill: yellow,
+)[Nel caso in cui si volesse applicare uno stile unico a diversi elementi dello stesso tipo, ad esempio tutti i button del sito, invece di utilizzare le classi di default di Tailwind, si definiscono delle variabili personalizzate, come si farebbe in CSS, e si applicano a tutti gli elementi che si vogliono stilizzare. Questo permette di avere uno stile coerente in tutta l'applicazione, e in caso di modifica, cambiare solamente la variabile personalizzata invece di dover cambiare la classe ad ogni elemento.]
+
 === LucideReact
 
 LucideReact#sub[@lucide] @lr è una libreria di icone open source per ReactJS, che offre una vasta gamma di icone personalizzabili e facilmente integrabili nelle applicazioni web. È stata scelta per il progetto Thinky per la sua facilità d'uso e per la sua compatibilità con TailwindCSS, che permette di personalizzare le icone in modo semplice e veloce.
@@ -473,7 +476,7 @@ La prima cosa che uno studente è chiamato a fare quando apre Thinky, è la regi
 
 Le prerogative della registrazione erano che fosse semplice, e che non chiedesse dati personali, così da non dover gestire la privacy degli studenti come da GDPR.
 
-Per questo motivo, è stata data l'opzione all'utente di generare uno username randomico, o di sceglierne uno personalizzato, che non dovesse obbligatoriamente essere il proprio nome. L'utente è informato di questa possibilità tramite un #glossary("tooltip") che appare al passaggio del mouse sull'icona delle informazioni al momento della registrazione. Inoltre, in questo _tooltip_ @tool'utente è informato che lo username deve essere rispettoso.
+Per questo motivo, è stata data l'opzione all'utente di generare uno username randomico, o di sceglierne uno personalizzato, che non dovesse obbligatoriamente essere il proprio nome. L'utente è informato di questa possibilità tramite un #glossary("tooltip") che appare al passaggio del mouse sull'icona #box(fill: yellow)[(o al click sull'incona se da mobile)] delle informazioni al momento della registrazione. Inoltre, in questo _tooltip_ @tool'utente è informato che lo username deve essere rispettoso.
 
 #figure(image("../images/uc/tolltip.png", fit: "contain", width: 30em), caption: "Tooltip di Thinky")<tool>
 
@@ -686,9 +689,9 @@ Per fare questo, è bastato prendere il prop username, separare il nome dell'ani
 
 === Responsive Design
 
-Tutto il progetto è stato sviluppato tenendo a mente il principio del _responsive design_, ovvero la capacità di adattarsi a diverse dimensioni dello schermo e dispositivi. Questo è stato fatto utilizzando le classi modificiatrici di TailwindCSS, che permettono di definire stili specifici per diverse dimensioni dello schermo, garantendo così una buona esperienza utente su tutti i dispositivi.
+Tutto il progetto è stato sviluppato tenendo a mente il principio del _responsive design_, ovvero la capacità di adattarsi a diverse dimensioni dello schermo e dispositivi. Questo è stato fatto utilizzando le classi modificatrici di TailwindCSS, che permettono di definire stili specifici per diverse dimensioni dello schermo, garantendo così una buona esperienza utente su tutti i dispositivi.
 
-Nonostante il progetto sia stato sviluppato con la consapevolezza che verrà utilizzato sui computer desktop del laboratorio del Dipartimento di Mamtematica, far si che l'applicazione fosse responsive permette di garantire una ottima esperienza a tutti gli utenti se in futuro dovessero utilizzare Thinky su dispositivi diversi, come smartphone o tablet.
+Nonostante il progetto sia stato sviluppato con la consapevolezza che verrà utilizzato sui computer desktop del laboratorio del Dipartimento di Matematica, far sì che l'applicazione fosse responsive permette di garantire una ottima esperienza a tutti gli utenti se in futuro dovessero utilizzare Thinky su dispositivi diversi, come smartphone o tablet.
 
 === Drag and Drop
 
@@ -720,7 +723,7 @@ Dato che però i vari Items erano renderizzati dinamicamente, in base ad un ogge
 
 == Accessibilità
 
-Come già scritto, l'accessibilità è stata una delle priorità principali del progetto Thinky. Si è cercato di garantire che tutti gli studenti potessero utilizzare la piattaforma senza difficoltà, in ogni parte del sistema, dalla più banale alla più complessiva. Per raggiungere questo obiettivo, sono state adottate diverse best practices e strumenti per misurare il grado di accessibilità.
+Come già scritto, l'accessibilità è stata una delle priorità principali del progetto Thinky. Si è cercato di garantire che tutti gli studenti potessero utilizzare la piattaforma senza difficoltà, in ogni parte del sistema, dalla più banale alla più complessa. Per raggiungere questo obiettivo, sono state adottate diverse best practices e strumenti per misurare il grado di accessibilità.
 
 Per essere sicuri che l'applicazione fosse accessibile a tutti gli utenti, sono stati seguiti gli standard WCAG (Web Content Accessibility Guidelines), che forniscono linee guida per rendere i contenuti web più accessibili a persone con disabilità. Queste linee guida coprono vari aspetti dell'accessibilità, come la navigazione, la leggibilità, l'uso di colori e contrasti, e l'interazione con i contenuti.
 
@@ -728,7 +731,7 @@ Sono stati utilizzati diversi strumenti per testare l'accessibilità dell'applic
 
 - Total validator, messo a disposizione dall'ateneo. È uno strumento che permette di verificare l'accessibilità dei siti web, controllando se rispettano gli standard WCAG. Total Validator esegue una serie di test automatici per identificare eventuali problemi di accessibilità e fornisce un report dettagliato con le problematiche riscontrate e le relative soluzioni.
 - Accessible Web Chrome Extension, un'estensione per il browser Google Chrome che permette di scansionare ogni pagina del sito e identificare eventuali problemi, evidenziandoli così da rendere più semplice la loro risoluzione. Questa estensione è molto utile per testare l'accessibilità in tempo reale, mentre si sviluppa l'applicazione, e permette di identificare rapidamente eventuali problemi di accessibilità.
-- Screen Reader (lettore di schermo), un software che legge ad alta voce il contenuto di una pagina web, permettendo agli utenti con disabilità visive di interagire con l'applicazione. I lettori di schermo sono uno strumento fondamentale per testare l'accessibilità dell'applicazione, in quanto permettono di verificare se il contenuto è leggibile e comprensibile anche per gli utenti con disabilità visive.
+- Screen Reader NVDA#sub[@nvda] (lettore di schermo), un software che legge ad alta voce il contenuto di una pagina web, permettendo agli utenti con disabilità visive di interagire con l'applicazione. I lettori di schermo sono uno strumento fondamentale per testare l'accessibilità dell'applicazione, in quanto permettono di verificare se il contenuto è leggibile e comprensibile anche per gli utenti con disabilità visive.
 
 Durante lo sviluppo inoltre, sono state applicate tutte le best practices per garantire l'accessibilità, come ad esempio:
 - Utilizzare colori con un contrasto sufficiente tra il testo e lo sfondo, in modo da garantire una buona leggibilità per tutti gli utenti.
@@ -739,7 +742,7 @@ Durante lo sviluppo inoltre, sono state applicate tutte le best practices per ga
 
 == Test e compatibilità
 
-Per garantire la consegna di un prodotto funzionante e di massima qualità sono stati svolti molteplici test manuali. Insieme alla #myProf, è stato deciso di non utilizzare test automatici dato che l'applicazione sarebbe stata testata molteplici volte durante lo sviluppo da più utenti, anche di tipo diverso.
+Per garantire la consegna di un prodotto funzionante e di massima qualità sono stati svolti molteplici test manuali. Insieme alla #myProf, è stato deciso di non utilizzare test automatici #box(fill: yellow)[sulla code coverage] dato che l'applicazione sarebbe stata testata molteplici volte durante lo sviluppo da più utenti, anche di tipo diverso.
 
 Più precisamente, l'applicazione è stata testata in toto da utenti target, e utenti esperti.
 
@@ -766,8 +769,8 @@ I dispositivi testati sono stati:
 
 ==== Risultato finale dei test
 
-I ripetuti test hanno portato a diverse modifiche nel tempo, che hanno migliorato l'esperienza utente e la stabilità dell'applicazione. Tutto questo ha fatto si che l'applicazione fosse pronta per essere presentata al pubblico, e che potesse essere utilizzata da tutti gli studenti senza problemi.
+I ripetuti test hanno portato a diverse modifiche nel tempo, che hanno migliorato l'esperienza utente e la stabilità dell'applicazione. Tutto questo ha fatto sì che l'applicazione fosse pronta per essere presentata al pubblico, e che potesse essere utilizzata da tutti gli studenti senza problemi.
 
 I test con utenti target hanno evidenziato come certi aspetti del laboratorio non fossero chiari e che fosse necessario semplificare gli esercizi e le istruzioni, in modo da renderli più comprensibili e facili da seguire. Inoltre, sono stati riscontrati alcuni problemi di usabilità, come ad esempio la difficoltà nel trovare alcune funzionalità o nel comprendere il funzionamento di alcune parti dell'applicazione.
 
-I test con utenti esperti hanno invece evidenziato alcune problematiche tecniche, come ad esempio il conrtrasto dei colori in alcuni elementi non fosse abbastanza accentuato e come, in particolare nel Drag and Drop, fosse necessario aggiungere dei colori alle istruzioni per rendere più chiaro lo scopo dell'esercizio. Alcuni test hanno anche rilevato mancata compatibilità con certi dispositivi, più nel particolare quelli Android, e come questi non supportassero alcune funzionalità avanzate come il drag and drop. Questi problemi sono stati risolti con modifiche al codice e all'interfaccia utente, in modo da garantire la massima compatibilità e usabilità su tutti i dispositivi e browser.
+I test con utenti esperti hanno invece evidenziato alcune problematiche tecniche, come ad esempio il contrasto dei colori in alcuni elementi non fosse abbastanza accentuato e come, in particolare nel Drag and Drop, fosse necessario aggiungere dei colori alle istruzioni per rendere più chiaro lo scopo dell'esercizio. Alcuni test hanno anche rilevato mancata compatibilità con certi dispositivi, più nel particolare quelli Android, e come questi non supportassero alcune funzionalità avanzate come il drag and drop. Questi problemi sono stati risolti con modifiche al codice e all'interfaccia utente, in modo da garantire la massima compatibilità e usabilità su tutti i dispositivi e browser.

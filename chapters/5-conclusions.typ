@@ -21,6 +21,12 @@
 #v(2em)
 == Lo scopo e le scelte
 
+Thinky è un progetto di stage universitario nato con l'obiettivo di sostituire i software attualmente utilizzati per le attività di OpenDay dell'Università di Padova, creando una WebApp interattiva proprietaria dell'ateneo con cui gli studenti potessero approcciarsi al mondo dell'informatica risolvendo alcuni problemi canonici, sotto la guida dei professori del corso.
+
+Il progetto vuole inoltre essere un monito per gli studenti che si trovano a dover scegliere un percorso di studi non in linea con il loro curriculum da studente, dimostrando come anche senza conoscenze specifiche, ma con la voglia di imparare e di mettersi in gioco, si possa intraprendere un percorso da informatico.
+
+La scelta di realizzare un progetto di questo tipo è stata per me importante, in quanto io stesso mi sono trovato a scegliere questo percorso di studi senza una pregressa conoscenza del mondo dell'informatica, e senza sapere se fosse la scelta giusta per me. Mi è sembrato quindi importante realizzare un progetto che possa essere utile a tutti gli studenti futuri che si vogliono 'gettare' in questo mondo ma insicuri perché mancano di conoscenze specifiche.
+
 Tutte le scelte atte durante lo svolgimento del progetto sono state tutte mirate non solo al raggiungimento degli obiettivi prefissati, e quindi al completamento del mio percorso (accademico e di stage), ma anche a garantire che un prodotto di qualità fosse consegnato, e soprattutto con la consapevolezza che la qualità che il prodotto che ho realizzato avrebbe avuto un impatto positivo su studenti che, come me in passato, si trovano a dover compiere una scelta tutt'altro che semplice, in un campo in cui la competenza, ma non la voglia di fare e le conoscenze, viene meno.
 
 Scegliere un percorso di studi, un lavoro, o qualsiasi altra attività, è un passo importante, e spesso difficile da compiere. Per questo motivo, ho cercato di realizzare un prodotto che potesse essere utile a chiunque si trovasse in questa situazione.
