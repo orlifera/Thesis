@@ -503,9 +503,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 - L'utente attende che l'admin carichi lo step 1.
 - Il sistema visualizza lo step 1.
-- #box(
-    fill: yellow,
-  )[L'utente può interagire con esso e completare l'esercizio sul produttore con le istruzioni mancanti.]
+- L'utente può interagire con esso e completare l'esercizio sul produttore con le istruzioni mancanti.
 
 *Inclusioni*
 
@@ -513,9 +511,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User story*
 
-- #box(
-    fill: yellow,
-  )[Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Produttore con le istruzioni mancanti.]
+- Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Produttore con le istruzioni mancanti.
 
 ==== UC4.1.1: Drag and Drop
 
@@ -582,9 +578,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 - L'utente attende che l'admin carichi lo step 2.
 - Il sistema visualizza lo step 2.
-- #box(
-    fill: yellow,
-  )[L'utente può interagire con esso e completare l'esercizio sul consumatore con le istruzioni mancanti.]
+- L'utente può interagire con esso e completare l'esercizio sul consumatore con le istruzioni mancanti.
 
 *Inclusioni*
 
@@ -592,9 +586,7 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User story*
 
-- #box(
-    fill: yellow,
-  )[Come utente, voglio visualizzare lo step 2 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Consumatore con le istruzioni mancanti.]
+- Come utente, voglio visualizzare lo step 2 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Consumatore con le istruzioni mancanti.
 
 
 ==== UC4.3: Visualizzazione Step 3
@@ -748,9 +740,8 @@ Per attore secondario si intende tutti quei servizi o sistemi esterni che Thinky
 
 *User Story*
 
-- Come utente voglio visualizzare lo step 4 del laboratorio per completare #box(fill: yellow)[l'esercizio sul problema dei lettori-scrittori con i menù a tendina] e interagire con esso completando l'attività.
+- Come utente voglio visualizzare lo step 4 del laboratorio per completare l'esercizio sul problema dei lettori-scrittori con i menù a tendina e interagire con esso completando l'attività.
 
-COMMENTO: lo spazio tra le parole è dato dall'evidenziatura in giallo, tolta quella la formattazione torna normale.
 
 ==== UC04.4.1: Completamento esercizio con menù a tendina
 
@@ -831,7 +822,7 @@ COMMENTO: lo spazio tra le parole è dato dall'evidenziatura in giallo, tolta qu
 
 *User story*
 
-- #box(fill: yellow)[Come utente, voglio visualizzare lo step 5 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Lettore con le istruzioni mancanti].
+- Come utente, voglio visualizzare lo step 5 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sul Lettore con le istruzioni mancanti.
 
 ==== UC4.6: Visualizzazione Step 6
 
@@ -872,9 +863,7 @@ COMMENTO: lo spazio tra le parole è dato dall'evidenziatura in giallo, tolta qu
 
 *User story*
 
-- #box(
-    fill: yellow,
-  )[Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sullo Scrittore con le istruzioni mancanti.]
+- Come utente, voglio visualizzare lo step 1 del laboratorio per interagire con il Drag and Drop e completare l'esercizio sullo Scrittore con le istruzioni mancanti.
 
 
 

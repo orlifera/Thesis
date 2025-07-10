@@ -363,6 +363,19 @@ Quindi, questo componente, verrà visualizzato ogni volta che si verifica un err
   caption: "Pagina di errore globale di Thinky",
 )<global>
 
+==== not-found.tsx
+
+#box(
+  fill: yellow,
+)[Il file #code-pill("not-found.tsx") @nf è un altro file speciale di NextJS che permette di gestire le pagine non trovate (404) a livello globale dell'applicazione. Questo file viene utilizzato per visualizzare una pagina di errore personalizzata quando l'utente cerca di accedere a una pagina che non esiste.
+
+  Basta definirne uno per ogni cartella in cui si vogliono gestire le pagine non trovate, e NextJS lo utilizzerà automaticamente per gestire l'errore 404 in quella cartella e nelle sue sottocartelle.]
+
+#figure(
+  image("../images/code/not-found.png", fit: "contain", width: 35em),
+  caption: "not-found.tsx di Thinky",
+)<nf>
+
 ==== Server e Client components
 
 In NextJS, per standard, tutti i #code-pill("layout.tsx") e tutti i file #code-pill("page.tsx") sono considerati _server-side components_, ovvero componenti che vengono eseguiti sul server e che possono accedere ai dati del server, come ad esempio le API o il database. Questi componenti vengono renderizzati sul server e poi inviati al client, dove vengono visualizzati.
@@ -373,7 +386,7 @@ I _client components_#sub[@csc] invece, differiscono dai primi in quanto vengono
 
 === TailwindCSS
 
-TailwindCSS#sub[@tailwind] @tw è un framework CSS #glossary("utility-first") che permette di creare interfacce utente moderne e personalizzabili in modo semplice e veloce. #box(fill: yellow)[Funziona attraverso l'utilizzo di classi CSS predefinite, che possono essere combinate per creare stili complessi senza dover scrivere codice CSS personalizzato. Questo approccio consente di risparmiare tempo e di evitare la scrittura di codice CSS complesso, rendendo lo sviluppo dell'interfaccia utente più rapido e intuitivo. Dopo l'installazione di Tailwind, si importa il file #code-pill("globals.css"), che contiene le classi CSS predefinite di Tailwind, e si possono iniziare ad utilizzare le classi CSS direttamente nei file #code-pill("page.tsx") .]
+TailwindCSS#sub[@tailwind] @tw è un framework CSS #glossary("utility-first") che permette di creare interfacce utente moderne e personalizzabili in modo semplice e veloce. Funziona attraverso l'utilizzo di classi CSS predefinite, che possono essere combinate per creare stili complessi senza dover scrivere codice CSS personalizzato. Questo approccio consente di risparmiare tempo e di evitare la scrittura di codice CSS complesso, rendendo lo sviluppo dell'interfaccia utente più rapido e intuitivo. Dopo l'installazione di Tailwind, si importa il file #code-pill("globals.css"), che contiene le classi CSS predefinite di Tailwind, e si possono iniziare ad utilizzare le classi CSS direttamente nei file #code-pill("page.tsx").
 
 
 È stato scelto per il progetto Thinky per la sua facilità d'uso, che permette allo sviluppatore di non preoccuparsi della specificità delle regole CSS in quanto le classi di Tailwind sono già create, ed esposte nella documentazione, e vengono inserite direttamente nel _markup_ HTML o TSX.
@@ -431,9 +444,7 @@ Mentre con TailwindCSS @tail, si avrebbe:
 
 Questo approccio, oltre che ad essere più conciso, permette di applicare lo stile direttamente all'elemento, senza preoccupazioni di sovrascritture da parte di stili applicati ad altri elementi prima di questo.
 
-#box(
-  fill: yellow,
-)[Nel caso in cui si volesse applicare uno stile unico a diversi elementi dello stesso tipo, ad esempio tutti i button del sito, invece di utilizzare le classi di default di Tailwind, si definiscono delle variabili personalizzate, come si farebbe in CSS, e si applicano a tutti gli elementi che si vogliono stilizzare. Questo permette di avere uno stile coerente in tutta l'applicazione, e in caso di modifica, cambiare solamente la variabile personalizzata invece di dover cambiare la classe ad ogni elemento.]
+Nel caso in cui si volesse applicare uno stile unico a diversi elementi dello stesso tipo, ad esempio tutti i button del sito, invece di utilizzare le classi di default di Tailwind, si definiscono delle variabili personalizzate, come si farebbe in CSS, e si applicano a tutti gli elementi che si vogliono stilizzare. Questo permette di avere uno stile coerente in tutta l'applicazione, e in caso di modifica, cambiare solamente la variabile personalizzata invece di dover cambiare la classe ad ogni elemento.
 
 === LucideReact
 
@@ -476,7 +487,7 @@ La prima cosa che uno studente è chiamato a fare quando apre Thinky, è la regi
 
 Le prerogative della registrazione erano che fosse semplice, e che non chiedesse dati personali, così da non dover gestire la privacy degli studenti come da GDPR.
 
-Per questo motivo, è stata data l'opzione all'utente di generare uno username randomico, o di sceglierne uno personalizzato, che non dovesse obbligatoriamente essere il proprio nome. L'utente è informato di questa possibilità tramite un #glossary("tooltip") che appare al passaggio del mouse sull'icona #box(fill: yellow)[(o al click sull'incona se da mobile)] delle informazioni al momento della registrazione. Inoltre, in questo _tooltip_ @tool'utente è informato che lo username deve essere rispettoso.
+Per questo motivo, è stata data l'opzione all'utente di generare uno username randomico, o di sceglierne uno personalizzato, che non dovesse obbligatoriamente essere il proprio nome. L'utente è informato di questa possibilità tramite un #glossary("tooltip") che appare al passaggio del mouse sull'icona (o al click sull'incona se da mobile) delle informazioni al momento della registrazione. Inoltre, in questo _tooltip_ @tool'utente è informato che lo username deve essere rispettoso.
 
 #figure(image("../images/uc/tolltip.png", fit: "contain", width: 30em), caption: "Tooltip di Thinky")<tool>
 
@@ -716,11 +727,6 @@ Dato che però i vari Items erano renderizzati dinamicamente, in base ad un ogge
 
 #figure(image("../images/code/map.png", fit: "contain", width: 35em), caption: "Dizionario delle classi")<dic>
 
-=== Tema chiaro e scuro
-
-
-
-
 == Accessibilità
 
 Come già scritto, l'accessibilità è stata una delle priorità principali del progetto Thinky. Si è cercato di garantire che tutti gli studenti potessero utilizzare la piattaforma senza difficoltà, in ogni parte del sistema, dalla più banale alla più complessa. Per raggiungere questo obiettivo, sono state adottate diverse best practices e strumenti per misurare il grado di accessibilità.
@@ -742,7 +748,7 @@ Durante lo sviluppo inoltre, sono state applicate tutte le best practices per ga
 
 == Test e compatibilità
 
-Per garantire la consegna di un prodotto funzionante e di massima qualità sono stati svolti molteplici test manuali. Insieme alla #myProf, è stato deciso di non utilizzare test automatici #box(fill: yellow)[sulla code coverage] dato che l'applicazione sarebbe stata testata molteplici volte durante lo sviluppo da più utenti, anche di tipo diverso.
+Per garantire la consegna di un prodotto funzionante e di massima qualità sono stati svolti molteplici test manuali. Insieme alla #myProf, è stato deciso di non utilizzare test automatici sulla code coverage dato che l'applicazione sarebbe stata testata molteplici volte durante lo sviluppo da più utenti, anche di tipo diverso.
 
 Più precisamente, l'applicazione è stata testata in toto da utenti target, e utenti esperti.
 
@@ -766,6 +772,10 @@ I dispositivi testati sono stati:
 - Computer portatili
 - Smartphone
 - Tablet
+
+#box(
+  fill: yellow,
+)[Alla fine dello sviluppo, è stato effettuato un test finale in laboratorio, con 47 macchine contemporanemente per verificare la stabilità dell'applicazione e la sua capacità di gestire un numero elevato di utenti. Questo test ha permesso di identificare eventuali problemi di performance e di stabilità, e di risolverli prima della consegna finale del progetto. Questo test ha evidenziato come i diversi metodi di salvataggio e reperimento dati influiscano sulle performance dell'applicazione, e come sia necessario ottimizzare il codice per garantire una buona esperienza utente anche in presenza di un numero elevato di utenti.]
 
 ==== Risultato finale dei test
 

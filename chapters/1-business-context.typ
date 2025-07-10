@@ -91,13 +91,13 @@ Dato che il progetto è stato svolto in singolo, mi sono impegnato a mantenere u
 
 == Struttura del Documento
 
-#box(fill: yellow)[Il #link(<stage-purpose>)[#text("secondo capitolo, 'Scopo del Tirocinio'", fill: blue.darken(30%))]] fornisce una panoramica di tutto il progetto, dal suo scopo, a i prodotti attesi, descrivendo nel dettaglio il concetto di webapp interattiva ed elencando gli obiettivi di partenza.
+Il #link(<stage-purpose>)[#text("secondo capitolo, 'Scopo del Tirocinio'", fill: blue.darken(30%))]fornisce una panoramica di tutto il progetto, dal suo scopo, a i prodotti attesi, descrivendo nel dettaglio il concetto di webapp interattiva ed elencando gli obiettivi di partenza.
 
-#box(fill: yellow)[Il #link(<adr>)[#text("terzo capitolo: 'Analisi dei Requisiti'", fill: blue.darken(30%))]] fornisce una panoramica dei requisiti del progetto, partendo dai requisiti funzionali e non funzionali, passando per i vincoli e le limitazioni, fino ad arrivare ai casi d'uso e alle user stories.
+Il #link(<adr>)[#text("terzo capitolo: 'Analisi dei Requisiti'", fill: blue.darken(30%))] fornisce una panoramica dei requisiti del progetto, partendo dai requisiti funzionali e non funzionali, passando per i vincoli e le limitazioni, fino ad arrivare ai casi d'uso e alle user stories.
 
-#box(fill: yellow)[Il #link(<cap:stage-description>)[#text("quarto capitolo: 'Implementazione'", fill: blue.darken(30%))] ]espone come le scelte descritte nel capitolo precedente sono state implementate e perché sono state scelte determinate tecnologie. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di #glossary("accessibilità").
+Il #link(<cap:stage-description>)[#text("quarto capitolo: 'Implementazione'", fill: blue.darken(30%))] espone come le scelte descritte nel capitolo precedente sono state implementate e perché sono state scelte determinate tecnologie. Inoltre, viene fornita una panoramica del codice sorgente, con i file più significativi e le loro funzionalità, oltre che la descrizione delle caratteristiche di #glossary("accessibilità").
 
-#box(fill: yellow)[Il #link(<conclusions>)[#text("quarto capitolo: 'Conclusioni'", fill: blue.darken(30%))]] fornisce una panoramica dei risultati ottenuti, sia a livello di codice sorgente che di accessibilità. Inoltre, viene fornita una panoramica dei test effettuati e dei risultati ottenuti.
+Il #link(<conclusions>)[#text("quarto capitolo: 'Conclusioni'", fill: blue.darken(30%))] fornisce una panoramica dei risultati ottenuti, sia a livello di codice sorgente che di accessibilità. Inoltre, viene fornita una panoramica dei test effettuati e dei risultati ottenuti.
 
 Nel #link(<cap:glossary>)[#text("Glossario", fill: blue.darken(30%))] sono riportati i termini tecnici e le abbreviazioni utilizzate nel corso del documento.
 
