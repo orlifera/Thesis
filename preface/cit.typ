@@ -18,5 +18,7 @@
 ])
 
 #align(center + horizon, text(style: "italic")[
-  Tenetevi il mondo e lasciatemi il mare
+  Tenetevi il mondo e lasciatemi il mare.
+
+  #sym.tilde U
 ])

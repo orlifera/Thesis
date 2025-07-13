@@ -365,11 +365,9 @@ Quindi, questo componente, verrà visualizzato ogni volta che si verifica un err
 
 ==== not-found.tsx
 
-#box(
-  fill: yellow,
-)[Il file #code-pill("not-found.tsx") @nf è un altro file speciale di NextJS che permette di gestire le pagine non trovate (404) a livello globale dell'applicazione. Questo file viene utilizzato per visualizzare una pagina di errore personalizzata quando l'utente cerca di accedere a una pagina che non esiste.
+Il file #code-pill("not-found.tsx") @nf è un altro file speciale di NextJS che permette di gestire le pagine non trovate (404) a livello globale dell'applicazione. Questo file viene utilizzato per visualizzare una pagina di errore personalizzata quando l'utente cerca di accedere a una pagina che non esiste.
 
-  Basta definirne uno per ogni cartella in cui si vogliono gestire le pagine non trovate, e NextJS lo utilizzerà automaticamente per gestire l'errore 404 in quella cartella e nelle sue sottocartelle.]
+Basta definirne uno per ogni cartella in cui si vogliono gestire le pagine non trovate, e NextJS lo utilizzerà automaticamente per gestire l'errore 404 in quella cartella e nelle sue sottocartelle.
 
 #figure(
   image("../images/code/not-found.png", fit: "contain", width: 35em),
@@ -773,9 +771,7 @@ I dispositivi testati sono stati:
 - Smartphone
 - Tablet
 
-#box(
-  fill: yellow,
-)[Alla fine dello sviluppo, è stato effettuato un test finale in laboratorio, con 47 macchine contemporanemente per verificare la stabilità dell'applicazione e la sua capacità di gestire un numero elevato di utenti. Questo test ha permesso di identificare eventuali problemi di performance e di stabilità, e di risolverli prima della consegna finale del progetto. Questo test ha evidenziato come i diversi metodi di salvataggio e reperimento dati influiscano sulle performance dell'applicazione, e come sia necessario ottimizzare il codice per garantire una buona esperienza utente anche in presenza di un numero elevato di utenti.]
+Alla fine dello sviluppo, è stato effettuato un test finale in laboratorio, con 47 macchine contemporanemente per verificare la stabilità dell'applicazione e la sua capacità di gestire un numero elevato di utenti. Questo test ha permesso di identificare eventuali problemi di performance e di stabilità, e di risolverli prima della consegna finale del progetto. Questo test ha evidenziato come i diversi metodi di salvataggio e reperimento dati influiscano sulle performance dell'applicazione, e come sia necessario ottimizzare il codice per garantire una buona esperienza utente anche in presenza di un numero elevato di utenti.
 
 ==== Risultato finale dei test
 
